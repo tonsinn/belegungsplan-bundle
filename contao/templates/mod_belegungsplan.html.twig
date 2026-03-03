@@ -1,0 +1,15 @@
+{% extends "@Contao/frontend_module/_base.html.twig" %}
+
+{% block content %}
+    {% if info is defined %}
+        <div class="belegungsplan-info">
+            {% for message in info %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="belegungsplan-wrapper">
+            {{ parent() }}
+        </div>
+    {% endif %}
+{% endblock %}

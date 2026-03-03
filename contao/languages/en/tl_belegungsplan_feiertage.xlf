@@ -1,0 +1,96 @@
+<?xml version="1.0" ?><xliff version="1.1">
+	<file datatype="php" original="src/Resources/contao/languages/en/tl_belegungsplan_feiertage.php" source-language="en">
+		<body>
+			<trans-unit id="tl_belegungsplan_feiertage.color_legend">
+				<source>Output settings</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.delete.0">
+				<source>Delete holiday</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.delete.1">
+				<source>Delete holiday ID %s</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.new.0">
+				<source>New holiday</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.new.1">
+				<source>Add a new holiday</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.edit.0">
+				<source>Edit holiday ID %s</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.edit.1">
+				<source>Holiday ID %s edit</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.title.0">
+				<source>Name of the holiday</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.title.1">
+				<source>Enter the name of the holiday here.</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.author.0">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.author.1">
+				<source>The creator of the holiday (optional)</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.showTitleText.0">
+				<source>Name as title</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.showTitleText.1">
+				<source>The title attribute is included in the HTML markup and is displayed on mouseover</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.startDate.0">
+				<source>Date holiday</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.startDate.1">
+				<source>The date of the holiday</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.tstamp.0">
+				<source>Revision date</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.tstamp.1">
+				<source>Date and time of the latest revision</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.title_legend">
+				<source>Name and author</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.date_legend">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.setHexToRgb">
+				<source>Not a valid hexadecimal value</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.reset">
+				<source>Reset</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.ausgabe.0">
+				<source>Highlight the holiday visually?</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.ausgabe.1">
+				<source>When activated, you have the option of making further settings</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.hintergrund.0">
+				<source>Background color</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.hintergrund.1">
+				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 5BC0DE.</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.opacity.0">
+				<source>Transparency (opacity)</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.opacity.1">
+				<source>The opacity CSS property indicates the transparency of an element. 1.0 corresponds to the full opacity.</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.bereitsVorhanden">
+				<source>A public holiday already exists for this date.</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.textcolor.0">
+				<source>Holiday text color</source>
+			</trans-unit>
+			<trans-unit id="tl_belegungsplan_feiertage.textcolor.1">
+				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 333333.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

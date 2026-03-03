@@ -10,7 +10,7 @@ System::loadLanguageFile('tl_content');
 
 $GLOBALS['TL_DCA']['tl_belegungsplan_category'] = [
     'config' => [
-        'dataContainer'    => 'Table',
+        'dataContainer' => \Contao\DC_Table::class,
         'ctable'           => ['tl_belegungsplan_objekte'],
         'switchToEdit'     => true,
         'enableVersioning' => true,
@@ -83,7 +83,7 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_category'] = [
         ],
         'author' => [
             'label'      => &$GLOBALS['TL_LANG']['tl_belegungsplan_category']['author'],
-            'default'    => BackendUser::getInstance()->id,
+            'default' => BackendUser::getInstance() ? BackendUser::getInstance()->id : 0,
             'exclude'    => true,
             'search'     => true,
             'filter'     => true,

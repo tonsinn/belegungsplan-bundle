@@ -1,4 +1,14 @@
 <?php
+use Contao\System;
+use Contao\Backend;
+use Contao\Input;
+use Contao\StringUtil;
+use Contao\Image;
+use Contao\Date;
+use Contao\Config;
+use Contao\Versions;
+use Contao\DataContainer;
+use Contao\BackendUser;
 /**
  * Contao Open Source CMS
  *

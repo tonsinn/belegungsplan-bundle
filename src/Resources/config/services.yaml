@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Mailwurm\BelegungsplanBundle\:
+        resource: '../../*'
+        exclude: '../../{Resources,DependencyInjection,MailwurmBelegungsplanBundle.php}'

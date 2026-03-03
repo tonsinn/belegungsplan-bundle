@@ -1,49 +1,30 @@
 {
     "name": "mailwurm/belegungsplan-bundle",
     "type": "contao-bundle",
-    "keywords":["contao","contao-bundle","bundle","belegungsplan","contao 4"],
-    "description": "Contao 4 Belegungspläne erstellen ",
+    "keywords": ["contao", "contao-bundle", "bundle", "belegungsplan", "contao 5"],
+    "description": "Contao 5 Belegungspläne erstellen",
     "license": "LGPL-3.0-or-later",
     "authors": [
         {
             "name": "Jan Karai",
             "homepage": "https://www.sachsen-it.de",
-            "role":"Developer"
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.0|^8.0",
-        "symfony/http-kernel": ">=3.3",
-        "contao/core-bundle": "^4.4.2",
-	"patchwork/utf8": ">=v1.3.3"
+        "php": "^8.2",
+        "contao/core-bundle": "^5.0"
     },
     "require-dev": {
-        "contao/manager-plugin": "^2.0",
-        "doctrine/doctrine-cache-bundle": "^1.3",
-        "friendsofphp/php-cs-fixer": "^2.0",
-        "phpunit/phpunit": "^5.0",
-        "php-http/guzzle6-adapter": "^1.1",
-        "php-http/message-factory": "^1.0.2",
-        "satooshi/php-coveralls": "^1.0",
-        "symfony/phpunit-bridge": "4.1.12"
+        "contao/manager-plugin": "^2.0"
     },
     "conflict": {
-        "contao/core": "*",
-        "contao/manager-plugin": "<2.0 || >=3.0"
+        "contao/core": "*"
     },
     "autoload": {
         "psr-4": {
             "Mailwurm\\BelegungsplanBundle\\": "src/"
-        },
-        "classmap": [
-            "src/Resources/contao/"
-        ],
-        "exclude-from-classmap": [
-            "src/Resources/contao/config/",
-            "src/Resources/contao/dca/",
-            "src/Resources/contao/languages/",
-            "src/Resources/contao/templates/"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -53,18 +34,6 @@
     "config": {
         "preferred-install": "dist"
     },
-    "support": {
-        "docs": "https://belegungsplan-bundle.de",
-        "forum": "https://community.contao.org",
-        "issues": "https://github.com/Mailwurm/belegungsplan-bundle/issues",
-        "source": "https://github.com/Mailwurm/belegungsplan-bundle"
-    },
-    "funding": [
-        {
-            "type": "other",
-            "url": "https://github.com/sponsors/Mailwurm"
-        }
-    ],
     "extra": {
         "contao-manager-plugin": "Mailwurm\\BelegungsplanBundle\\ContaoManager\\Plugin"
     }

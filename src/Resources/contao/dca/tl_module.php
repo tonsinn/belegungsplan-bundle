@@ -1,4 +1,10 @@
 <?php
+use Contao\System;
+use Contao\Backend;
+use Contao\Input;
+use Contao\Environment;
+use Contao\StringUtil;
+use Contao\DataContainer;
 /**
  * Contao Open Source CMS
  *
@@ -547,7 +553,6 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['belegungsplan_template'] = array(
 	'sql'					=> "varchar(64) NOT NULL default ''"
 );
 
-$bundles = System::getContainer()->getParameter('kernel.bundles');
 
 /**
  * Provide miscellaneous methods that are used by the data configuration array.

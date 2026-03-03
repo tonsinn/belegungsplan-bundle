@@ -1,0 +1,47 @@
+{% extends "@Contao/frontend_module/_base.html.twig" %}
+
+{% block content %}
+    {% if info is defined %}
+        <div class="belegungsplan-info">
+            {% for message in info %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="belegungsplan-wrapper">
+            {% for year, months in Month %}
+                {% for month, monthData in months %}
+                    <h3>{{ monthData.Name }} {{ year }}</h3>
+                    <table class="belegungsplan-table" style="border-collapse:collapse;width:100%">
+                        <thead>
+                            <tr>
+                                <th>Objekt</th>
+                                {% for day, dayData in monthData.Days %}
+                                    <th class="{{ dayData.Class }}">{{ dayData.DayCut }}<br>{{ day }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for catId, category in CategorieObjekteCalender %}
+                                {% for sort, objekt in category.Objekte %}
+                                    <tr>
+                                        <td>{{ objekt.ObjektName }}</td>
+                                        {% for day, dayData in monthData.Days %}
+                                            {% set calEntry = objekt.Calender[year][month][day] ?? '' %}
+                                            {% if calEntry != '' %}
+                                                <td style="background:{{ RgbaBelegt }}"></td>
+                                            {% else %}
+                                                <td style="background:{{ RgbaFrei }}"></td>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+
