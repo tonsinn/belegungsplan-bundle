@@ -1,0 +1,270 @@
+{% extends "@Contao/frontend_module/_base.html.twig" %}
+
+{% block content %}
+    {% if info is defined %}
+        <div class="belegungsplan-info">
+            {% for message in info %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% else %}
+        <style>
+            {% if AnzeigeKategorie %}
+            tr.belegCategory {
+                background-color: var(--blp-color-kategorie);
+                color: var(--blp-color-kategorietext);
+            }
+            {% if LinkKategorie %}
+            table.belegungsplan-modal-table > tbody > tr.belegCategory > th > a {
+                color: var(--blp-color-link-kategorie);
+                {{ KategorieDecorationLine|raw }}
+                {% if 'none' not in KategorieDecorationLine %}{{ KategorieDecorationStyle|raw }}{% endif %}
+            }
+            {% endif %}
+            {% endif %}
+            .modal.modal-wide .modal-dialog { max-width: 90%; }
+            .modal-wide .modal-body { overflow-y: auto; }
+            {% if AnzeigeWochenende %}
+            .table.belegungsplan-modal-table > thead > tr > th.saturday,
+            .table.belegungsplan-table > thead > tr > th.saturday,
+            .table.belegungsplan-modal-table > thead > tr > th.sunday,
+            .table.belegungsplan-table > thead > tr > th.sunday {
+                background-color: var(--blp-color-bg-wochenende);
+                color: var(--blp-color-wochenendetext);
+            }
+            {% endif %}
+            table.belegungsplan-modal-table > thead > tr > th { text-align: center; }
+            table.belegungsplan-modal-table,
+            table.belegungsplan-table { color: var(--blp-color-text); }
+            table.belegungsplan-table { cursor: pointer; }
+            .container-fluid .row { --bs-gutter-x: 6px; }
+            .table.belegungsplan-modal-table > tbody > tr > td.danger,
+            .table.belegungsplan-table > tbody > tr > td.danger {
+                border-right: none;
+                border-left: none;
+            }
+            .table.belegungsplan-table > tbody > tr > td.anreise,
+            .table.belegungsplan-modal-table > tbody > tr > td.anreise {
+                border-right: none;
+                background: var(--blp-color-frei);
+                background: linear-gradient(135deg, var(--blp-color-frei) 0%, var(--blp-color-frei) 50%, var(--blp-color-belegt) 50%, var(--blp-color-belegt) 100%);
+            }
+            .table.belegungsplan-table > tbody > tr > td.abreise,
+            .table.belegungsplan-modal-table > tbody > tr > td.abreise {
+                border-left: none;
+                background: var(--blp-color-belegt);
+                background: linear-gradient(135deg, var(--blp-color-belegt) 0%, var(--blp-color-belegt) 50%, var(--blp-color-frei) 50%, var(--blp-color-frei) 100%);
+            }
+            .table.belegungsplan-table { font-size: 1px; margin-bottom: 0; }
+            .belegungsplan-table thead { display: none; }
+            .belegungsplan-table > tbody > tr.belegObjekt > td:first-child { width: 50%; }
+            .belegungsplan-modal-table { font-size: 12px; }
+            .belegungsplan-modal-table { border: 1px solid var(--blp-color-rahmen); }
+            .blp-month-box { border: 1px solid var(--blp-color-rahmen); border-radius: 4px; padding: 0; margin-bottom: 5px; overflow: hidden; }
+            .blp-month-box > p { padding: 6px 8px 4px; margin-bottom: 0; }
+            .table > tbody > tr > td.success { background-color: var(--blp-color-frei) !important; }
+            {% if AnzeigeLegende %}
+            .blp-success, .blp-success:hover, .blp-success:focus, .blp-success:active {
+                color: var(--blp-color-legende-frei);
+                background-color: var(--blp-color-frei);
+                border-color: var(--blp-color-frei);
+            }
+            .blp-danger, .blp-danger:hover, .blp-danger:focus, .blp-danger:active {
+                color: var(--blp-color-legende-belegt);
+                background-color: var(--blp-color-belegt);
+                border-color: var(--blp-color-belegt);
+            }
+            {% endif %}
+            .table > tbody > tr > td.danger { background-color: var(--blp-color-belegt) !important; }
+            .belegungsplan-table > thead > tr > td,
+            .belegungsplan-table > thead > tr > th,
+            .belegungsplan-table > tbody > tr > td,
+            .belegungsplan-table > tbody > tr > th {
+                padding: 1px;
+                border: none;
+                border-top: 1px solid var(--blp-color-rahmen);
+                border-bottom: 1px solid var(--blp-color-rahmen);
+            }
+            .Blp-Height-20 { height: 20px; }
+            .table.belegungsplan-modal-table > tbody > tr > td.success { padding: 0; }
+            .table.belegungsplan-modal-table > tbody > tr > td,
+            .table.belegungsplan-modal-table > tbody > tr > th,
+            .table.belegungsplan-modal-table > thead > tr > td,
+            .table.belegungsplan-modal-table > thead > tr > th { padding: 4px; }
+            .table-bordered > thead > tr > th,
+            .table-bordered > tbody > tr > th,
+            .table-bordered > thead > tr > td,
+            .table-bordered > tbody > tr > td { border: 1px solid var(--blp-color-rahmen); }
+            {% if LinkText %}
+            table.belegungsplan-modal-table > tbody > tr.belegObjekt > td > a {
+                color: var(--blp-color-link-text);
+                {{ TextDecorationLine|raw }}
+                {% if 'none' not in TextDecorationLine %}{{ TextDecorationStyle|raw }}{% endif %}
+            }
+            {% endif %}
+        </style>
+
+        <div class="container-fluid" style="
+            --blp-color-frei: {{ RgbaFrei }};
+            --blp-color-belegt: {{ RgbaBelegt }};
+            --blp-color-text: {{ RgbaText }};
+            --blp-color-rahmen: {{ RgbaRahmen }};
+            --blp-color-bg-wochenende: {{ RgbaBgWochenende }};
+            --blp-color-wochenendetext: {{ RgbaWochenendetext }};
+            --blp-color-kategorie: {{ RgbaKategorie }};
+            --blp-color-kategorietext: {{ RgbaKategorietext }};
+            --blp-color-link-kategorie: {{ RgbaLinkKategorie }};
+            --blp-color-link-text: {{ RgbaLinkText }};
+            --blp-color-legende-frei: {{ RgbaTextLegendeFrei }};
+            --blp-color-legende-belegt: {{ RgbaTextLegendeBelegt }};
+        ">
+            {% if number_year > 1 %}
+                <script src="{{ asset('bundles/mailwurmbelegungsplan/belegungsplan.js') }}" defer></script>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                        <form method="get" class="belegungsplan-year-select">
+                            <select name="belegyear" class="form-select">
+                                {% for singleyear in selectable_year %}
+                                    <option value="{{ singleyear.single_year }}"{% if singleyear.active %} selected{% endif %}>{{ singleyear.single_year }}</option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                        <div class="Blp-Height-20">&nbsp;</div>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="row">
+            {% for year, months in Month %}
+                {% for month, monthData in months %}
+                    {% set modalId = 'Belegungsplan' ~ year ~ (month < 10 ? '0'~month : month) %}
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-12 thumbnail">
+                        <div class="blp-month-box">
+                        <p class="text-center">{{ monthData.Name }} {{ year }}</p>
+
+                        {# Kleine Vorschau-Tabelle – öffnet Modal beim Klick #}
+                        <table class="table table-sm belegungsplan-table" data-bs-toggle="modal" data-bs-target="#{{ modalId }}">
+                            <thead>
+                                <tr>
+                                    <th>{{ monthData.Name }} {{ year }}</th>
+                                    {% for day, dayData in monthData.Days %}
+                                        <th{% if dayData.Class %} class="{{ dayData.Class }}"{% endif %}{% if dayData.Style is defined and dayData.Style %}{{ dayData.Style|raw }}{% endif %}{% if dayData.Title is defined and dayData.ShowTitleText is defined and dayData.ShowTitleText %} title="{{ dayData.Title }}"{% endif %}>{{ day < 10 ? '0'~day : day }}<br>{{ dayData.DayCut }}</th>
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for catId, category in CategorieObjekteCalender %}
+                                    {% if AnzeigeKategorie %}
+                                        <tr class="belegCategory">
+                                            <th colspan="{{ monthData.ColSpan }}">{{ category.CategoryTitle }}</th>
+                                        </tr>
+                                    {% endif %}
+                                    {% for sort, objekt in category.Objekte %}
+                                        <tr class="belegObjekt">
+                                            <td>{{ objekt.ObjektName }}</td>
+                                            {% for day, dayData in monthData.Days %}
+                                                {% set calEntry = objekt.Calender[year][month][day] ?? '' %}
+                                                {% if calEntry == '0#1' %}
+                                                    <td class="{{ VollBelegung ? 'danger' : 'anreise' }}"></td>
+                                                {% elseif calEntry == '1#0' %}
+                                                    <td class="{{ VollBelegung ? 'danger' : 'abreise' }}"></td>
+                                                {% elseif calEntry != '' %}
+                                                    <td class="danger"></td>
+                                                {% else %}
+                                                    <td class="success"></td>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </tr>
+                                    {% endfor %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        </div>{# /blp-month-box #}
+
+                        {# Bootstrap 5 Modal mit vollständiger Detailtabelle #}
+                        <div id="{{ modalId }}" class="modal modal-wide fade" tabindex="-1" aria-labelledby="{{ modalId }}Label" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="{{ modalId }}Label">{{ monthData.Name }} {{ year }}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered belegungsplan-modal-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            {% if AnzeigeLegende %}
+                                                                <button type="button" class="btn btn-sm blp-success">{{ Frei }}</button>&nbsp;<button type="button" class="btn btn-sm blp-danger">{{ Belegt }}</button>
+                                                            {% endif %}
+                                                        </th>
+                                                        {% for day, dayData in monthData.Days %}
+                                                            <th{% if dayData.Class %} class="{{ dayData.Class }}"{% endif %}{% if dayData.Style is defined and dayData.Style %}{{ dayData.Style|raw }}{% endif %}{% if dayData.Title is defined and dayData.ShowTitleText is defined and dayData.ShowTitleText %} title="{{ dayData.Title }}"{% endif %}>{{ day < 10 ? '0'~day : day }}<br>{{ dayData.DayCut }}</th>
+                                                        {% endfor %}
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for catId, category in CategorieObjekteCalender %}
+                                                        {% if AnzeigeKategorie %}
+                                                            <tr class="belegCategory">
+                                                                <th colspan="{{ monthData.ColSpan }}">
+                                                                    {% if category.CategoryTitleLink %}
+                                                                        <a href="{{ category.CategoryTitleLink }}"
+                                                                            {% if category.CategoryLinkCSS[0] is defined and category.CategoryLinkCSS[0] %} id="{{ category.CategoryLinkCSS[0] }}"{% endif %}
+                                                                            {% if category.CategoryLinkCSS[1] is defined and category.CategoryLinkCSS[1] %} class="{{ category.CategoryLinkCSS[1] }}"{% endif %}
+                                                                            {% if category.CategoryLinkTitle %} title="{{ category.CategoryLinkTitle }}"{% endif %}
+                                                                            {% if category.CategoryTarget %} target="_blank" rel="noreferrer"{% endif %}
+                                                                        >{{ category.CategoryTitle }}</a>
+                                                                    {% else %}
+                                                                        {{ category.CategoryTitle }}
+                                                                    {% endif %}
+                                                                </th>
+                                                            </tr>
+                                                        {% endif %}
+                                                        {% for sort, objekt in category.Objekte %}
+                                                            <tr class="belegObjekt">
+                                                                <td>
+                                                                    {% if objekt.ObjektTitleLink %}
+                                                                        <a href="{{ objekt.ObjektTitleLink }}"
+                                                                            {% if objekt.ObjektLinkCSS[0] is defined and objekt.ObjektLinkCSS[0] %} id="{{ objekt.ObjektLinkCSS[0] }}"{% endif %}
+                                                                            {% if objekt.ObjektLinkCSS[1] is defined and objekt.ObjektLinkCSS[1] %} class="{{ objekt.ObjektLinkCSS[1] }}"{% endif %}
+                                                                            {% if objekt.ObjektLinkTitle %} title="{{ objekt.ObjektLinkTitle }}"{% endif %}
+                                                                            {% if objekt.ObjektTarget %} target="_blank" rel="noreferrer"{% endif %}
+                                                                        >{{ objekt.ObjektName }}</a>{% if objekt.ObjektInfoText and objekt.ObjektShowInfotext %} ({{ objekt.ObjektInfoText }}){% endif %}
+                                                                    {% else %}
+                                                                        {{ objekt.ObjektName }}{% if objekt.ObjektInfoText and objekt.ObjektShowInfotext %} ({{ objekt.ObjektInfoText }}){% endif %}
+                                                                    {% endif %}
+                                                                </td>
+                                                                {% for day, dayData in monthData.Days %}
+                                                                    {% set calEntry = objekt.Calender[year][month][day] ?? '' %}
+                                                                    {% if calEntry == '0#1' %}
+                                                                        <td class="{{ VollBelegung ? 'danger' : 'anreise' }}"></td>
+                                                                    {% elseif calEntry == '1#0' %}
+                                                                        <td class="{{ VollBelegung ? 'danger' : 'abreise' }}"></td>
+                                                                    {% elseif calEntry != '' %}
+                                                                        <td class="danger"></td>
+                                                                    {% else %}
+                                                                        <td class="success"></td>
+                                                                    {% endif %}
+                                                                {% endfor %}
+                                                            </tr>
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

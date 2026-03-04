@@ -47,9 +47,6 @@ class BelegungsplanCalenderListener
         if ($varValue < $startDate) {
             throw new \RuntimeException($GLOBALS['TL_LANG']['tl_belegungsplan_calender']['endDateError'] ?? 'End date must be after start date');
         }
-        if ($varValue === $startDate) {
-            throw new \RuntimeException($GLOBALS['TL_LANG']['tl_belegungsplan_calender']['sameDateError'] ?? 'Start and end date must be different');
-        }
         return $varValue;
     }#[AsCallback(table: 'tl_belegungsplan_calender', target: 'config.onsubmit')]
     public function loadUeberschneidung(DataContainer $dc): void
@@ -59,12 +56,18 @@ class BelegungsplanCalenderListener
         }
 
         $current = $this->db->fetchAssociative(
-            'SELECT id, pid, startDate, endDate FROM tl_belegungsplan_calender WHERE id = ?',
+            'SELECT id, pid, startDate, endDate, dauer FROM tl_belegungsplan_calender WHERE id = ?',
             [$dc->id]
         );
 
         if (!$current) {
             return;
+        }
+
+        // Bei eintägiger Belegung endDate auf startDate setzen
+        if ($current['dauer'] === 'oneday' && $current['endDate'] !== $current['startDate']) {
+            $this->db->update('tl_belegungsplan_calender', ['endDate' => $current['startDate']], ['id' => $dc->id]);
+            $current['endDate'] = $current['startDate'];
         }
 
         // Reset overlap flag for current record

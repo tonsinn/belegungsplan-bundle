@@ -1,1 +1,229 @@
 /* Contao Open Source CMS, (c) Jan Karai, LGPL-3.0-or-later */
+
+/* ── Wrapper & CSS-Custom-Property-Standardwerte ────────────── */
+.belegungsplan-wrapper {
+    --blp-color-frei:            rgba(198, 239, 206, 1);
+    --blp-color-belegt:          rgba(255, 199, 206, 1);
+    --blp-color-text:            rgba(0, 0, 0, 1);
+    --blp-color-rahmen:          rgba(156, 156, 156, 1);
+    --blp-color-bg-wochenende:   rgba(220, 220, 220, 1);
+    --blp-color-wochenendetext:  rgba(0, 0, 0, 1);
+    --blp-color-kategorie:       rgba(200, 200, 200, 1);
+    --blp-color-kategorietext:   rgba(0, 0, 0, 1);
+    --blp-color-link-kategorie:  inherit;
+    --blp-color-link-text:       inherit;
+    --blp-color-legende-frei:    rgba(0, 0, 0, 1);
+    --blp-color-legende-belegt:  rgba(0, 0, 0, 1);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ── Jahresauswahl ───────────────────────────────────────────── */
+.belegungsplan-year-select {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.belegungsplan-year-select__wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.belegungsplan-year-select__wrapper::after {
+    content: '▾';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 0.75rem;
+    color: #555;
+    line-height: 1;
+}
+
+.belegungsplan-year-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 6px 32px 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    min-width: 90px;
+}
+
+.belegungsplan-year-select select:hover {
+    border-color: #888;
+}
+
+.belegungsplan-year-select select:focus {
+    border-color: #555;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.belegungsplan-year-select__submit {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    background: #f5f5f5;
+    font-size: 1rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.belegungsplan-year-select__submit:hover {
+    background: #e8e8e8;
+    border-color: #888;
+}
+
+/* ── Tabellen-Container ──────────────────────────────────────── */
+.belegungsplan-tables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+/* ── Tabelle ─────────────────────────────────────────────────── */
+.belegungsplan-table {
+    border-collapse: collapse;
+    flex: 1 1 0;
+    min-width: max-content;
+    margin: 0;
+    color: var(--blp-color-text);
+    border: 1px solid var(--blp-color-rahmen);
+    table-layout: auto;
+}
+
+/* ── Alle Zellen ─────────────────────────────────────────────── */
+.belegungsplan-table > thead > tr > th,
+.belegungsplan-table > thead > tr > td,
+.belegungsplan-table > tbody > tr > th,
+.belegungsplan-table > tbody > tr > td {
+    padding: 1px;
+    border: 1px solid var(--blp-color-rahmen);
+    white-space: nowrap;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+
+/* Erste Spalte (Objektname) – linksbündig */
+.belegungsplan-table > thead > tr > th:first-child,
+.belegungsplan-table > tbody > tr > td:first-child {
+    text-align: left;
+    white-space: normal;
+    min-width: 8rem;
+    padding: 2px 4px;
+}
+
+/* ── Monats-/Jahresüberschrift ───────────────────────────────── */
+.belegungsplan-table th.headJahr {
+    text-align: center;
+    font-weight: bold;
+    padding: 4px;
+}
+
+/* ── Wochenend-Spaltenköpfe ──────────────────────────────────── */
+.belegungsplan-table > thead > tr > th.saturday,
+.belegungsplan-table > thead > tr > th.sunday {
+    background-color: var(--blp-color-bg-wochenende);
+    color: var(--blp-color-wochenendetext);
+}
+
+/* ── Kategorie-Zeilen ────────────────────────────────────────── */
+.belegungsplan-table > tbody > tr.belegCategory > th {
+    background-color: var(--blp-color-kategorie);
+    color: var(--blp-color-kategorietext);
+    text-align: left;
+    padding: 2px 4px;
+}
+
+.belegungsplan-table > tbody > tr.belegCategory > th > a {
+    color: var(--blp-color-link-kategorie);
+}
+
+/* ── Objektzeilen-Links ──────────────────────────────────────── */
+.belegungsplan-table > tbody > tr.belegObjekt > td > a {
+    color: var(--blp-color-link-text);
+}
+
+/* ── Zell-Zustände ───────────────────────────────────────────── */
+.belegungsplan-table > tbody > tr > td.success {
+    background-color: var(--blp-color-frei);
+}
+
+.belegungsplan-table > tbody > tr > td.danger {
+    background-color: var(--blp-color-belegt);
+    border-right: none;
+    border-left: none;
+}
+
+.belegungsplan-table > tbody > tr > td.anreise {
+    border-right: none;
+    background: linear-gradient(
+        135deg,
+        var(--blp-color-frei)   0%,
+        var(--blp-color-frei)   50%,
+        var(--blp-color-belegt) 50%,
+        var(--blp-color-belegt) 100%
+    );
+}
+
+.belegungsplan-table > tbody > tr > td.abreise {
+    border-left: none;
+    background: linear-gradient(
+        135deg,
+        var(--blp-color-belegt) 0%,
+        var(--blp-color-belegt) 50%,
+        var(--blp-color-frei)   50%,
+        var(--blp-color-frei)   100%
+    );
+}
+
+/* ── Legende ─────────────────────────────────────────────────── */
+.blp-legend {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.blp-success,
+.blp-danger {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    cursor: default;
+}
+
+.blp-success,
+.blp-success:hover,
+.blp-success:focus,
+.blp-success:active {
+    color: var(--blp-color-legende-frei);
+    background-color: var(--blp-color-frei);
+    border-color: var(--blp-color-frei);
+}
+
+.blp-danger,
+.blp-danger:hover,
+.blp-danger:focus,
+.blp-danger:active {
+    color: var(--blp-color-legende-belegt);
+    background-color: var(--blp-color-belegt);
+    border-color: var(--blp-color-belegt);
+}
+
+/* ── Info-Meldungen ──────────────────────────────────────────── */
+.belegungsplan-info p {
+    margin: 0 0 8px;
+}

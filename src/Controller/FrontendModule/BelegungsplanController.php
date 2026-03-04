@@ -7,6 +7,7 @@ namespace Mailwurm\BelegungsplanBundle\Controller\FrontendModule;
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
 use Contao\CoreBundle\Twig\FragmentTemplate;
+use Contao\Input;
 use Contao\ModuleModel;
 use Contao\StringUtil;
 use Doctrine\DBAL\Connection;
@@ -19,14 +20,33 @@ class BelegungsplanController extends AbstractFrontendModuleController
     public function __construct(private readonly Connection $db)
     {
     }
-protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
+
+    /**
+     * Template-Auswahl vor createTemplate() einsetzen, da die Closure in
+     * AbstractFragmentController den Namen zum Erstellungszeitpunkt einfriert.
+     * setName() in getResponse() käme zu spät – die Closure würde immer das
+     * Default-Template 'mod_belegungsplan_table' rendern.
+     */
+    public function __invoke(Request $request, ModuleModel $model, string $section, array|null $classes = null): Response
     {
-        if ($model->belegungsplan_template) {
-            $template->setName($model->belegungsplan_template);
-}
-$categories = StringUtil::deserialize($model->belegungsplan_categories);
-        $months = StringUtil::deserialize($model->belegungsplan_month);
-        $showAusgabe = $model->belegungsplan_showAusgabe;
+        if ($model->belegungsplan_template && !$model->customTpl) {
+            $model->customTpl = $model->belegungsplan_template;
+        }
+
+        return parent::__invoke($request, $model, $section, $classes);
+    }
+
+    protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
+    {
+        $GLOBALS['TL_CSS'][] = 'bundles/mailwurmbelegungsplan/belegungsplan.css||static';
+
+        // Contao erkennt Template-Namen ohne Slash als Legacy und setzt headline als String.
+        // Die Twig-Basevorlage braucht aber headline.text / headline.tag_name.
+        $headlineData = StringUtil::deserialize($model->headline, true);
+        $template->headline = [
+            'text'     => $headlineData['value'] ?? '',
+            'tag_name' => $headlineData['unit'] ?? 'h1',
+        ];
 
         $categories = StringUtil::deserialize($model->belegungsplan_categories);
         $months = StringUtil::deserialize($model->belegungsplan_month);
@@ -46,10 +66,10 @@ $categories = StringUtil::deserialize($model->belegungsplan_categories);
         if ($showAusgabe === 'standard') {
             sort($months, SORT_NUMERIC);
             $intMax = (int) max($months);
-            $intYear = $request->query->get('belegyear');
+            $intYear = Input::get('belegyear');
             $blnClearInput = false;
 
-            if (!$request->query->has('belegyear')) {
+            if ($intYear === null) {
                 $intYear = $intMax < (int) date('n') ? (int) date('Y') + 1 : (int) date('Y');
                 $blnClearInput = true;
             } else {
@@ -102,42 +122,50 @@ if (empty($arrInfo)) {
             $template->selectable_year = $arrJahre;
             $template->CategorieObjekteCalender = $this->sortNachWizard($arrCategorieObjekteCalender ?? [], $categories);
 
-            if ($showAusgabe === 'standard') {
-                $template->Month = $this->dataMonth($months, $intStartAuswahl, $arrFeiertage ?? []);
-            } else {
-                $template->Month = $this->dataMonthIndividuell($intStartAuswahl, $intEndeAuswahl, $arrFeiertage ?? []);
-            }
-
             $arrFeiertage = $this->getFeiertage($intStartAuswahl, $intEndeAuswahl);
+
+            if ($showAusgabe === 'standard') {
+                $template->Month = $this->dataMonth($months, $intStartAuswahl, $arrFeiertage);
+            } else {
+                $template->Month = $this->dataMonthIndividuell($intStartAuswahl, $intEndeAuswahl, $arrFeiertage);
+            }
 
             $template->Frei = $GLOBALS['TL_LANG']['mailwurm_belegung']['legende']['frei'] ?? '';
             $template->Belegt = $GLOBALS['TL_LANG']['mailwurm_belegung']['legende']['belegt'] ?? '';
-            $template->RgbaFrei = 'rgba('.$model->belegungsplan_color_frei.','.$model->belegungsplan_opacity_frei.')';
-            $template->RgbaBelegt = 'rgba('.$model->belegungsplan_color_belegt.','.$model->belegungsplan_opacity_belegt.')';
-            $template->RgbaText = 'rgba('.$model->belegungsplan_color_text.','.$model->belegungsplan_opacity_text.')';
-            $template->RgbaRahmen = 'rgba('.$model->belegungsplan_color_rahmen.','.$model->belegungsplan_opacity_rahmen.')';
+            $template->RgbaFrei = $this->rgba($model->belegungsplan_color_frei, $model->belegungsplan_opacity_frei, '76,174,76');
+            $template->RgbaBelegt = $this->rgba($model->belegungsplan_color_belegt, $model->belegungsplan_opacity_belegt, '212,63,58');
+            $template->RgbaText = $this->rgba($model->belegungsplan_color_text, $model->belegungsplan_opacity_text, '51,51,51');
+            $template->RgbaRahmen = $this->rgba($model->belegungsplan_color_rahmen, $model->belegungsplan_opacity_rahmen, '221,221,221');
             $template->AnzeigeLegende = $model->belegungsplan_anzeige_legende;
             $template->AnzeigeKategorie = $model->belegungsplan_anzeige_kategorie;
             $template->AnzeigeWochenende = $model->belegungsplan_anzeige_wochenende;
-            $template->RgbaBgWochenende = 'rgba('.$model->belegungsplan_bgcolor_wochenende.','.$model->belegungsplan_opacity_bg_wochenende.')';
-            $template->RgbaWochenendetext = 'rgba('.$model->belegungsplan_color_wochenendetext.','.$model->belegungsplan_opacity_wochenendetext.')';
-            $template->RgbaKategorie = 'rgba('.$model->belegungsplan_color_kategorie.','.$model->belegungsplan_opacity_kategorie.')';
-            $template->RgbaKategorietext = 'rgba('.$model->belegungsplan_color_kategorietext.','.$model->belegungsplan_opacity_kategorietext.')';
+            $template->VollBelegung      = (bool) $model->belegungsplan_vollbelegung;
+            $template->RgbaBgWochenende = $this->rgba($model->belegungsplan_bgcolor_wochenende, $model->belegungsplan_opacity_bg_wochenende, '238,238,238');
+            $template->RgbaWochenendetext = $this->rgba($model->belegungsplan_color_wochenendetext, $model->belegungsplan_opacity_wochenendetext, '51,51,51');
+            $template->RgbaKategorie = $this->rgba($model->belegungsplan_color_kategorie, $model->belegungsplan_opacity_kategorie, '200,200,200');
+            $template->RgbaKategorietext = $this->rgba($model->belegungsplan_color_kategorietext, $model->belegungsplan_opacity_kategorietext, '51,51,51');
             $template->LinkKategorie = $model->belegungsplan_anzeige_linkKategorie;
-            $template->RgbaLinkKategorie = 'rgba('.$model->belegungsplan_color_linkKategorie.','.$model->belegungsplan_opacity_linkKategorie.')';
-            $template->KategorieDecorationLine = 'text-decoration: '.$model->belegungsplan_kategorieDecorationLine.';';
-            $template->KategorieDecorationStyle = 'text-decoration-style: '.$model->belegungsplan_kategorieDecorationStyle.';';
+            $template->RgbaLinkKategorie = $this->rgba($model->belegungsplan_color_linkKategorie, $model->belegungsplan_opacity_linkKategorie, '51,51,51');
+            $template->KategorieDecorationLine = 'text-decoration: '.($model->belegungsplan_kategorieDecorationLine ?: 'none').';';
+            $template->KategorieDecorationStyle = 'text-decoration-style: '.($model->belegungsplan_kategorieDecorationStyle ?: 'solid').';';
             $template->LinkText = $model->belegungsplan_anzeige_linkText;
-            $template->RgbaLinkText = 'rgba('.$model->belegungsplan_color_linkText.','.$model->belegungsplan_opacity_linkText.')';
-            $template->TextDecorationLine = 'text-decoration: '.$model->belegungsplan_textDecorationLine.';';
-            $template->TextDecorationStyle = 'text-decoration-style: '.$model->belegungsplan_textDecorationStyle.';';
-            $template->RgbaTextLegendeFrei = 'rgba('.$model->belegungsplan_color_legende_frei.','.$model->belegungsplan_opacity_legende.')';
-            $template->RgbaTextLegendeBelegt = 'rgba('.$model->belegungsplan_color_legende_belegt.','.$model->belegungsplan_opacity_legende.')';
+            $template->RgbaLinkText = $this->rgba($model->belegungsplan_color_linkText, $model->belegungsplan_opacity_linkText, '51,51,51');
+            $template->TextDecorationLine = 'text-decoration: '.($model->belegungsplan_textDecorationLine ?: 'none').';';
+            $template->TextDecorationStyle = 'text-decoration-style: '.($model->belegungsplan_textDecorationStyle ?: 'solid').';';
+            $template->RgbaTextLegendeFrei = $this->rgba($model->belegungsplan_color_legende_frei, $model->belegungsplan_opacity_legende, '51,51,51');
+            $template->RgbaTextLegendeBelegt = $this->rgba($model->belegungsplan_color_legende_belegt, $model->belegungsplan_opacity_legende, '51,51,51');
         }
 
         return $template->getResponse();
     }
-private function getCategorieObjekte(array $categories): array
+private function rgba(mixed $color, mixed $opacity, string $defaultColor, string $defaultOpacity = '1.0'): string
+    {
+        $color = (string) $color;
+        $opacity = (string) $opacity;
+        return 'rgba(' . ($color ?: $defaultColor) . ',' . ($opacity ?: $defaultOpacity) . ')';
+    }
+
+    private function getCategorieObjekte(array $categories): array
     {
         $result = [];
         $rows = $this->db->fetchAllAssociative("
@@ -217,14 +245,21 @@ private function getCategorieObjekte(array $categories): array
     {
         $years = [];
         $rows = $this->db->fetchAllAssociative("
-            SELECT YEAR(FROM_UNIXTIME(tbc.startDate)) as Start
-            FROM tl_belegungsplan_calender tbc
-            JOIN tl_belegungsplan_objekte tbo ON tbc.pid = tbo.id
-            WHERE YEAR(FROM_UNIXTIME(tbc.startDate)) >= ?
-            AND tbo.published = '1'
-            GROUP BY YEAR(FROM_UNIXTIME(tbc.startDate))
-            ORDER BY YEAR(FROM_UNIXTIME(tbc.startDate)) ASC
-        ", [$intMinYear]);
+            SELECT DISTINCT Start FROM (
+                SELECT YEAR(FROM_UNIXTIME(tbc.startDate)) as Start
+                FROM tl_belegungsplan_calender tbc
+                JOIN tl_belegungsplan_objekte tbo ON tbc.pid = tbo.id
+                WHERE YEAR(FROM_UNIXTIME(tbc.startDate)) >= :minYear
+                AND tbo.published = '1'
+                UNION
+                SELECT YEAR(FROM_UNIXTIME(tbc.endDate)) as Start
+                FROM tl_belegungsplan_calender tbc
+                JOIN tl_belegungsplan_objekte tbo ON tbc.pid = tbo.id
+                WHERE YEAR(FROM_UNIXTIME(tbc.endDate)) >= :minYear
+                AND tbo.published = '1'
+            ) years
+            ORDER BY Start ASC
+        ", ['minYear' => $intMinYear]);
 
         foreach ($rows as $row) {
             $years[] = [
@@ -353,7 +388,7 @@ private function includeCalender(int $intBuchungsStartJahr, int $intBuchungsEnde
             JOIN tl_belegungsplan_objekte tbo ON tbc.pid = tbo.id
             JOIN tl_belegungsplan_category tbcat ON tbo.pid = tbcat.id
             WHERE tbo.published = '1'
-            AND tbc.startDate < tbc.endDate
+            AND tbc.startDate <= tbc.endDate
             AND ((tbc.startDate < :start AND tbc.endDate >= :start)
                 OR (tbc.startDate >= :start AND tbc.endDate <= :ende)
                 OR (tbc.startDate < :ende AND tbc.endDate > :ende))
@@ -368,7 +403,10 @@ private function includeCalender(int $intBuchungsStartJahr, int $intBuchungsEnde
                 if ($showAusgabe === 'standard' && !in_array($m, $months)) {
                     // skip
                 } else {
-                    if ($z === 0) {
+                    if ($z === 0 && $y === (int)$row['EndeJahr'] && $m === (int)$row['EndeMonat'] && $d === (int)$row['EndeTag']) {
+                        // Tagesaufenthalt: Anreise und Abreise am selben Tag → voll belegt
+                        $arrCategorieObjekte[$catId]['Objekte'][$sort]['Calender'][$y][$m][$d] = '1#1';
+                    } elseif ($z === 0) {
                         $arrCategorieObjekte[$catId]['Objekte'][$sort]['Calender'][$y][$m][$d] =
                             $this->includeCalender((int)$row['BuchungsStartJahr'], (int)$row['BuchungsEndeJahr'], $y, $existing, 0);
                     } elseif ($y === (int)$row['EndeJahr'] && $m === (int)$row['EndeMonat'] && $d === (int)$row['EndeTag']) {

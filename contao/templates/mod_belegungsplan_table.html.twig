@@ -8,30 +8,100 @@
             {% endfor %}
         </div>
     {% else %}
-        <div class="belegungsplan-wrapper">
+        <div class="belegungsplan-wrapper" style="
+            --blp-color-frei: {{ RgbaFrei }};
+            --blp-color-belegt: {{ RgbaBelegt }};
+            --blp-color-text: {{ RgbaText }};
+            --blp-color-rahmen: {{ RgbaRahmen }};
+            --blp-color-bg-wochenende: {{ RgbaBgWochenende }};
+            --blp-color-wochenendetext: {{ RgbaWochenendetext }};
+            --blp-color-kategorie: {{ RgbaKategorie }};
+            --blp-color-kategorietext: {{ RgbaKategorietext }};
+            --blp-color-link-kategorie: {{ RgbaLinkKategorie }};
+            --blp-color-link-text: {{ RgbaLinkText }};
+            --blp-color-legende-frei: {{ RgbaTextLegendeFrei }};
+            --blp-color-legende-belegt: {{ RgbaTextLegendeBelegt }};
+        ">
+            {% if number_year > 1 %}
+                <script src="{{ asset('bundles/mailwurmbelegungsplan/belegungsplan.js') }}" defer></script>
+                <form method="get" class="belegungsplan-year-select">
+                    <div class="belegungsplan-year-select__wrapper">
+                        <select name="belegyear">
+                            {% for singleyear in selectable_year %}
+                                <option value="{{ singleyear.single_year }}"{% if singleyear.active %} selected{% endif %}>{{ singleyear.single_year }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="belegungsplan-year-select__submit">&#8250;</button>
+                </form>
+            {% endif %}
+
+            <div class="belegungsplan-tables">
             {% for year, months in Month %}
                 {% for month, monthData in months %}
-                    <h3>{{ monthData.Name }} {{ year }}</h3>
-                    <table class="belegungsplan-table" style="border-collapse:collapse;width:100%">
+                    <table class="belegungsplan-table">
                         <thead>
                             <tr>
-                                <th>Objekt</th>
+                                <th colspan="{{ monthData.ColSpan }}" class="headJahr">{{ monthData.Name }} {{ year }}</th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    {% if AnzeigeLegende %}
+                                        <span class="blp-legend">
+                                            <button type="button" class="blp-success">{{ Frei }}</button>
+                                            <button type="button" class="blp-danger">{{ Belegt }}</button>
+                                        </span>
+                                    {% endif %}
+                                </th>
                                 {% for day, dayData in monthData.Days %}
-                                    <th class="{{ dayData.Class }}">{{ dayData.DayCut }}<br>{{ day }}</th>
+                                    <th{% if dayData.Class %} class="{{ dayData.Class }}"{% endif %}{% if dayData.Style is defined and dayData.Style %}{{ dayData.Style|raw }}{% endif %}{% if dayData.Title is defined and dayData.ShowTitleText is defined and dayData.ShowTitleText %} title="{{ dayData.Title }}"{% endif %}>{{ day < 10 ? '0'~day : day }}<br>{{ dayData.DayCut }}</th>
                                 {% endfor %}
                             </tr>
                         </thead>
                         <tbody>
                             {% for catId, category in CategorieObjekteCalender %}
+                                {% if AnzeigeKategorie %}
+                                    <tr class="belegCategory">
+                                        <th colspan="{{ monthData.ColSpan }}">
+                                            {% if category.CategoryTitleLink %}
+                                                <a href="{{ category.CategoryTitleLink }}"
+                                                    {% if category.CategoryLinkCSS[0] is defined and category.CategoryLinkCSS[0] %} id="{{ category.CategoryLinkCSS[0] }}"{% endif %}
+                                                    {% if category.CategoryLinkCSS[1] is defined and category.CategoryLinkCSS[1] %} class="{{ category.CategoryLinkCSS[1] }}"{% endif %}
+                                                    {% if category.CategoryLinkTitle %} title="{{ category.CategoryLinkTitle }}"{% endif %}
+                                                    {% if category.CategoryTarget %} target="_blank" rel="noreferrer"{% endif %}
+                                                    {% if LinkKategorie %} style="{{ KategorieDecorationLine }}{% if 'none' not in KategorieDecorationLine %}{{ KategorieDecorationStyle }}{% endif %}"{% endif %}
+                                                >{{ category.CategoryTitle }}</a>
+                                            {% else %}
+                                                {{ category.CategoryTitle }}
+                                            {% endif %}
+                                        </th>
+                                    </tr>
+                                {% endif %}
                                 {% for sort, objekt in category.Objekte %}
-                                    <tr>
-                                        <td>{{ objekt.ObjektName }}</td>
+                                    <tr class="belegObjekt">
+                                        <td>
+                                            {% if objekt.ObjektTitleLink %}
+                                                <a href="{{ objekt.ObjektTitleLink }}"
+                                                    {% if objekt.ObjektLinkCSS[0] is defined and objekt.ObjektLinkCSS[0] %} id="{{ objekt.ObjektLinkCSS[0] }}"{% endif %}
+                                                    {% if objekt.ObjektLinkCSS[1] is defined and objekt.ObjektLinkCSS[1] %} class="{{ objekt.ObjektLinkCSS[1] }}"{% endif %}
+                                                    {% if objekt.ObjektLinkTitle %} title="{{ objekt.ObjektLinkTitle }}"{% endif %}
+                                                    {% if objekt.ObjektTarget %} target="_blank" rel="noreferrer"{% endif %}
+                                                    {% if LinkText %} style="{{ TextDecorationLine }}{% if 'none' not in TextDecorationLine %}{{ TextDecorationStyle }}{% endif %}"{% endif %}
+                                                >{{ objekt.ObjektName }}</a>{% if objekt.ObjektInfoText and objekt.ObjektShowInfotext %} ({{ objekt.ObjektInfoText }}){% endif %}
+                                            {% else %}
+                                                {{ objekt.ObjektName }}{% if objekt.ObjektInfoText and objekt.ObjektShowInfotext %} ({{ objekt.ObjektInfoText }}){% endif %}
+                                            {% endif %}
+                                        </td>
                                         {% for day, dayData in monthData.Days %}
                                             {% set calEntry = objekt.Calender[year][month][day] ?? '' %}
-                                            {% if calEntry != '' %}
-                                                <td style="background:{{ RgbaBelegt }}"></td>
+                                            {% if calEntry == '0#1' %}
+                                                <td class="{{ VollBelegung ? 'danger' : 'anreise' }}"></td>
+                                            {% elseif calEntry == '1#0' %}
+                                                <td class="{{ VollBelegung ? 'danger' : 'abreise' }}"></td>
+                                            {% elseif calEntry != '' %}
+                                                <td class="danger"></td>
                                             {% else %}
-                                                <td style="background:{{ RgbaFrei }}"></td>
+                                                <td class="success"></td>
                                             {% endif %}
                                         {% endfor %}
                                     </tr>
@@ -41,7 +111,7 @@
                     </table>
                 {% endfor %}
             {% endfor %}
+            </div>
         </div>
     {% endif %}
 {% endblock %}
-
