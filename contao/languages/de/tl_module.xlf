@@ -103,7 +103,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_textDecorationLine.1">
 				<source>Sets the kind of text decoration to use</source>
-				<target>Legt die Art der zu verwendenden Textdekoration fest</target>
+				<target>Legt die Art der zu verwendenden Textdekoration fest&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-None.jpg&quot; alt=&quot;none&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline.jpg&quot; alt=&quot;underline&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-Overline.jpg&quot; alt=&quot;overline&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-Line-Through.jpg&quot; alt=&quot;line-through&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline-Overline.jpg&quot; alt=&quot;underline overline&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline-Overline-Line-Through.jpg&quot; alt=&quot;underline overline line-through&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_textDecorationStyle.0">
 				<source>text-decoration-style</source>
@@ -111,7 +111,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_textDecorationStyle.1">
 				<source>Sets the style of the text decoration</source>
-				<target>Legt den Stil der Textdekoration fest</target>
+				<target>Legt den Stil der Textdekoration fest&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Style-Solid.jpg&quot; alt=&quot;solid&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Style-Dashed.jpg&quot; alt=&quot;dashed&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Style-Dotted.jpg&quot; alt=&quot;dotted&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Style-Double.jpg&quot; alt=&quot;double&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Style-Wavy.jpg&quot; alt=&quot;wavy&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.anzeige_legend">
 				<source>Display settings</source>
@@ -159,7 +159,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_frei.1">
 				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 4CAE4C.</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 4CAE4C.</target>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 4CAE4C.&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Freie-Tage-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_belegt.0">
 				<source>Color of the occupied days</source>
@@ -167,7 +167,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_belegt.1">
 				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is D43F3A.</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist D43F3A.</target>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist D43F3A.&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Belegte-Tage-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_text.0">
 				<source>Text color</source>
@@ -175,7 +175,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_text.1">
 				<source>The colors for the category text and legend text can be found below. Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 333333.</source>
-				<target>Die Farben für Kategorietext und Legendentext finden sie weiter unten. Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 333333.</target>
+				<target>Die Farben für Kategorietext und Legendentext finden sie weiter unten. Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 333333.&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_linkText.0">
 				<source>Link color</source>
@@ -191,7 +191,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_rahmen.1">
 				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is DDDDDD.</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist DDDDDD.</target>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist DDDDDD.&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Tabellenrahmen-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_anzeige_linkText.0">
 				<source>Link settings</source>
@@ -215,7 +215,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_anzeige_kategorie.1">
 				<source>When activated, you have the option of making further settings</source>
-				<target>Bei Aktivierung haben Sie die Möglichkeit weitere Einstellungen vorzunehmen</target>
+				<target>Bei Aktivierung haben Sie die Möglichkeit weitere Einstellungen vorzunehmen&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Anzeige-Hauptkategorie-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_kategorie.0">
 				<source>Category line background color</source>
@@ -223,7 +223,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_kategorie.1">
 				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is CCCCCC.</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist CCCCCC.</target>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist CCCCCC.&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/HG-Kategoriezeile-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_kategorietext.0">
 				<source>Text color of the category line</source>
@@ -231,7 +231,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_kategorietext.1">
 				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 000000.</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 000000.</target>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 000000.&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Kategoriezeile-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_linkKategorie.0">
 				<source>Link color</source>
@@ -247,7 +247,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_kategorieDecorationLine.1">
 				<source>Sets the kind of text decoration to use</source>
-				<target>Legt die Art der zu verwendenden Textdekoration fest</target>
+				<target>Legt die Art der zu verwendenden Textdekoration fest&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-None.jpg&quot; alt=&quot;none&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline.jpg&quot; alt=&quot;underline&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-Overline.jpg&quot; alt=&quot;overline&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-Line-Through.jpg&quot; alt=&quot;line-through&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline-Overline.jpg&quot; alt=&quot;underline overline&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline-Overline-Line-Through.jpg&quot; alt=&quot;underline overline line-through&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_kategorieDecorationStyle.0">
 				<source>text-decoration-style</source>
@@ -255,7 +255,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_kategorieDecorationStyle.1">
 				<source>Sets the style of the text decoration</source>
-				<target>Legt den Stil der Textdekoration fest</target>
+				<target>Legt den Stil der Textdekoration fest&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Style-Solid.jpg&quot; alt=&quot;solid&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Style-Dashed.jpg&quot; alt=&quot;dashed&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Style-Dotted.jpg&quot; alt=&quot;dotted&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Style-Double.jpg&quot; alt=&quot;double&quot;&gt;&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Text-Decoration-Style-Wavy.jpg&quot; alt=&quot;wavy&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_anzeige_legende.0">
 				<source>Show legend (explanation)?</source>
@@ -263,7 +263,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_anzeige_legende.1">
 				<source>When activated, you have the option of making further settings</source>
-				<target>Bei Aktivierung haben Sie die Möglichkeit weitere Einstellungen vorzunehmen</target>
+				<target>Bei Aktivierung haben Sie die Möglichkeit weitere Einstellungen vorzunehmen&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Anzeige-Legende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_legende_frei.0">
 				<source>Text color legend free days</source>
@@ -271,7 +271,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_legende_frei.1">
 				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is FFFFFF.</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist FFFFFF.</target>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist FFFFFF.&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Legende-Frei-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_legende_belegt.0">
 				<source>Text color legend occupied days</source>
@@ -279,7 +279,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_legende_belegt.1">
 				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is FFFFFF.</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist FFFFFF.</target>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist FFFFFF.&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Legende-Belegt-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_anzeige_wochenende.0">
 				<source>Visually highlight weekends?</source>
@@ -295,7 +295,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_bgcolor_wochenende.1">
 				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is CCCCCC.</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist CCCCCC.</target>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist CCCCCC.&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Hintergrund-Wochenende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_wochenendetext.0">
 				<source>Weekends text color</source>
@@ -303,7 +303,7 @@
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_color_wochenendetext.1">
 				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 333333.</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 333333.</target>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 333333.&lt;br&gt;&lt;img src=&quot;bundles/mailwurmbelegungsplan/Textfarbe-Wochenende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="tl_module.belegungsplan_opacity.0">
 				<source>Transparency (opacity)</source>
