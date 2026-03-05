@@ -118,8 +118,8 @@
             --blp-color-legende-frei: {{ RgbaTextLegendeFrei }};
             --blp-color-legende-belegt: {{ RgbaTextLegendeBelegt }};
         ">
+            <script src="{{ asset('bundles/tonsinnbelegungsplan/belegungsplan.js') }}" defer></script>
             {% if number_year > 1 %}
-                <script src="{{ asset('bundles/tonsinnbelegungsplan/belegungsplan.js') }}" defer></script>
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-12">
                         <form method="get" class="belegungsplan-year-select">
