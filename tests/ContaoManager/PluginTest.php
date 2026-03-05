@@ -16,7 +16,6 @@ use PHPUnit\Framework\TestCase;
 /**
 * Tests the Plugin class.
 *
-* @author Jan Karai <http://www.sachsen-it.de>
 */
 class PluginTest extends TestCase {
     /**

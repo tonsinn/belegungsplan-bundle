@@ -3,7 +3,7 @@
 /*
 * This file is part of Contao.
 *
-* Copyright (c) Jan Karai
+* Copyright (c) Mathias Ebert, based on work from Jan Karai
 *
 * @license LGPL-3.0-or-later
 */

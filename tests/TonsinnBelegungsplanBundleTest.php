@@ -12,7 +12,6 @@ use PHPUnit\Framework\TestCase;
 /**
 * Tests the TonsinnBelegungsplanBundle class.
 *
-* @author Jan Karai <http://www.sachsen-it.de>
 */
 class TonsinnBelegungsplanBundleTest extends TestCase {
     /**

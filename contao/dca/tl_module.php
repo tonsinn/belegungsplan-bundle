@@ -8,11 +8,10 @@ use Contao\DataContainer;
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) Jan Karai
+ * Copyright (c) Mathias Ebert, based on work from Jan Karai
  *
  * @license LGPL-3.0-or-later
  *
- * @author Jan Karai <https://www.sachsen-it.de>
  */
 /**
  * onload_callback prueft beim Laden des Modul ob Felder auf disabled gesetzt werden muessen
