@@ -1,5 +1,16 @@
 # Contao Belegungsplan-Bundle Changelog
 
+### v5.0.0 Stable (05.03.2026)
+#### Allgemein
+- Tiefgreifende Weiterentwicklung auf Kompatibilität mit Contao 5.7
+- Paket umbenannt zu `tonsinn/belegungsplan-bundle` (basierend auf `mailwurm/belegungsplan-bundle` von Jan Karai)
+- Entfernung von Contao 4-Altlasten
+#### Anzeige-Einstellungen
+- Neue Option: „Anreise/Abreise als vollständig belegt anzeigen?"
+#### Template-Einstellungen
+- Neues Frontend-Modul-Setting: Darstellung als Liste/Tabelle oder als Übersicht im Bootstrap Grid
+- Umstellung aller `.html5`-Templates auf Twig
+
 ### v4.0.0 Stable (03.10.2024)
 #### Anzeige-Einstellungen
 - Auswahlmöglichkeit Standard nach Belegzeiten, Ausgabe nach Anzahl von Monaten, Ausgabe nach individuellem Zeitraum
