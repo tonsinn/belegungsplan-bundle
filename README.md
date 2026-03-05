@@ -1,20 +1,21 @@
 # Contao 5.7 Belegungsplan Bundle
 
-[![](https://img.shields.io/packagist/v/mailwurm/belegungsplan-bundle.svg?style=flat-square)](https://packagist.org/packages/mailwurm/belegungsplan-bundle)
-[![](https://img.shields.io/packagist/dt/mailwurm/belegungsplan-bundle.svg?style=flat-square)](https://packagist.org/packages/mailwurm/belegungsplan-bundle)
-[![License](https://poser.pugx.org/mailwurm/belegungsplan-bundle/license)](//packagist.org/packages/mailwurm/belegungsplan-bundle)
+[![](https://img.shields.io/packagist/v/tonsinn/belegungsplan-bundle.svg?style=flat-square)](https://packagist.org/packages/tonsinn/belegungsplan-bundle)
+[![](https://img.shields.io/packagist/dt/tonsinn/belegungsplan-bundle.svg?style=flat-square)](https://packagist.org/packages/tonsinn/belegungsplan-bundle)
+[![License](https://poser.pugx.org/tonsinn/belegungsplan-bundle/license)](//packagist.org/packages/tonsinn/belegungsplan-bundle)
+
+Contao 5 Bundle zur Erstellung von Belegungsplänen. Basierend auf der Arbeit von Jan Karai (mailwurm/belegungsplan-bundle).
 
 
 ## Installation
-Hinweise und Anweisungen zur Installation finden sie auf der [**Projektwebseite - Installation**](https://belegungsplan-bundle.de/installation.html).
+```bash
+composer require tonsinn/belegungsplan-bundle
+```
 
-Unterstützung bei [**Update von v2.4 auf v3.0**](https://github.com/Mailwurm/belegungsplan-bundle/blob/master/docs/Update-v2-to-v3.md)
 
 ## Dokumentation
 Eine ausführliche Dokumentation zu den Komponenten finden sie auf der [**Projektwebseite - Komponenten**](https://belegungsplan-bundle.de/komponenten.html).
 
-## Versions-Newsletter
-Keine neue Version verpassen mit dem [**Versions - Newsletter**](https://belegungsplan-bundle.de/versions-newsletter.html) auf der [**Projektwebseite**](https://belegungsplan-bundle.de).
 
 ## Der neueste Changelog
 
@@ -54,6 +55,6 @@ Keine neue Version verpassen mit dem [**Versions - Newsletter**](https://belegun
 #### Sonstige Änderungen:
 - Unterstützung von PHP 5 wird eingestellt
 
-Hier finden sie den kompletten [**Changelog**](https://github.com/Mailwurm/belegungsplan-bundle/blob/master/CHANGELOG.md).
+Hier finden sie den kompletten [**Changelog**](https://github.com/tonsinn/belegungsplan-bundle/blob/master/CHANGELOG.md).
 
-![Collage Belegungsplan-Bundle](https://github.com/Mailwurm/belegungsplan-bundle/blob/master/docs/img/Belegungsplan-Bundle.jpg)
+![Collage Belegungsplan-Bundle](https://github.com/tonsinn/belegungsplan-bundle/blob/master/docs/img/Belegungsplan-Bundle.jpg)
