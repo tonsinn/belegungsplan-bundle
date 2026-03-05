@@ -6,7 +6,7 @@
  *
  * @license LGPL-3.0-or-later
  */
-namespace Mailwurm\Belegung;
+namespace Tonsinn\Belegung;
 /**
  * Provide methods to handle text fields with unit drop down menu.
  *

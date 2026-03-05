@@ -21,10 +21,10 @@
 				<source>Click here to go to the project website on GitHub:</source>
 			</trans-unit>
 			<trans-unit id="tl_beleginfo.websitegithuburl">
-				<source>&lt;a style=&quot;color:#6610f2;&quot; href=&quot;//github.com/Mailwurm/belegungsplan-bundle&quot; target=&quot;_blank&quot; title=&quot;Belegungsplan-Bundle GitHub&quot;&gt;Belegungsplan-Bundle GitHub&lt;/a&gt;</source>
+				<source>&lt;a style=&quot;color:#6610f2;&quot; href=&quot;//github.com/tonsinn/belegungsplan-bundle&quot; target=&quot;_blank&quot; title=&quot;Belegungsplan-Bundle GitHub&quot;&gt;Belegungsplan-Bundle GitHub&lt;/a&gt;</source>
 			</trans-unit>
 			<trans-unit id="tl_beleginfo.stars">
-				<source>&lt;a style=&quot;color:#6610f2;&quot; href=&quot;//github.com/Mailwurm/belegungsplan-bundle&quot; target=&quot;_blank&quot; title=&quot;Give a star on GitHub&quot;&gt;Give a star on GitHub&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a style=&quot;color:#6610f2;&quot; href=&quot;//github.com/sponsors/Mailwurm&quot; target=&quot;_blank&quot; title=&quot;Sponsor @Mailwurm on GitHub&quot;&gt;Sponsor @Mailwurm on GitHub&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a style=&quot;color:#6610f2;&quot; href=&quot;//github.com/Mailwurm/belegungsplan-bundle/issues&quot; target=&quot;_blank&quot; title=&quot;Submit a problem on GitHub&quot;&gt;Submit a problem on GitHub&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a style=&quot;color:#6610f2;&quot; href=&quot;//github.com/Mailwurm&quot; target=&quot;_blank&quot; title=&quot;Follow @Mailwurm on GitHub&quot;&gt;Follow @Mailwurm&lt;/a&gt;</source>
+				<source>&lt;a style=&quot;color:#6610f2;&quot; href=&quot;//github.com/tonsinn/belegungsplan-bundle&quot; target=&quot;_blank&quot; title=&quot;Give a star on GitHub&quot;&gt;Give a star on GitHub&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a style=&quot;color:#6610f2;&quot; href=&quot;//github.com/sponsors/tonsinn&quot; target=&quot;_blank&quot; title=&quot;Sponsor @tonsinn on GitHub&quot;&gt;Sponsor @tonsinn on GitHub&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a style=&quot;color:#6610f2;&quot; href=&quot;//github.com/tonsinn/belegungsplan-bundle/issues&quot; target=&quot;_blank&quot; title=&quot;Submit a problem on GitHub&quot;&gt;Submit a problem on GitHub&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;a style=&quot;color:#6610f2;&quot; href=&quot;//github.com/tonsinn&quot; target=&quot;_blank&quot; title=&quot;Follow @tonsinn on GitHub&quot;&gt;Follow @tonsinn&lt;/a&gt;</source>
 			</trans-unit>
 		</body>
 	</file>

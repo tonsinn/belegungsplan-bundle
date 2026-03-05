@@ -75,9 +75,9 @@ class BelegungsplanController extends AbstractFrontendModuleController
             } else {
                 if (!empty($intYear)) {
                     if (!is_numeric($intYear) || strlen((string)$intYear) !== 4) {
-                        $arrInfo[] = '1. ' . ($GLOBALS['TL_LANG']['mailwurm_belegung']['info'][1] ?? '');
+                        $arrInfo[] = '1. ' . ($GLOBALS['TL_LANG']['tonsinn_belegung']['info'][1] ?? '');
                     } elseif ((int)$intYear < (int) date('Y')) {
-                        $arrInfo[] = '4. ' . ($GLOBALS['TL_LANG']['mailwurm_belegung']['info'][2] ?? '');
+                        $arrInfo[] = '4. ' . ($GLOBALS['TL_LANG']['tonsinn_belegung']['info'][2] ?? '');
                     }
                 }
             }
@@ -95,7 +95,7 @@ class BelegungsplanController extends AbstractFrontendModuleController
             $aStart = StringUtil::deserialize($model->belegungsplan_individuellMonateStart);
             $aEnde = StringUtil::deserialize($model->belegungsplan_individuellMonateEnde);
             if (empty($aStart) || empty($aEnde)) {
-                $arrInfo[] = '6. ' . ($GLOBALS['TL_LANG']['mailwurm_belegung']['info'][4] ?? '');
+                $arrInfo[] = '6. ' . ($GLOBALS['TL_LANG']['tonsinn_belegung']['info'][4] ?? '');
             } else {
                 $iDaysEnd = date('t', (int) mktime(0, 0, 0, (int)$aEnde['unit'], 1, (int)$aEnde['value']));
                 $intStartAuswahl = (int) mktime(0, 0, 0, (int)$aStart['unit'], 1, (int)$aStart['value']);
@@ -105,7 +105,7 @@ class BelegungsplanController extends AbstractFrontendModuleController
 if (empty($arrInfo)) {
             $arrCategorieObjekte = $this->getCategorieObjekte($categories);
             if (empty($arrCategorieObjekte)) {
-                $arrInfo[] = '3. ' . ($GLOBALS['TL_LANG']['mailwurm_belegung']['info'][0] ?? '');
+                $arrInfo[] = '3. ' . ($GLOBALS['TL_LANG']['tonsinn_belegung']['info'][0] ?? '');
             } else {
                 $arrCategorieObjekteCalender = $this->getObjekteCalender($intStartAuswahl, $intEndeAuswahl, $arrCategorieObjekte, $showAusgabe, $months);
                 if ($showAusgabe === 'standard') {
@@ -130,8 +130,8 @@ if (empty($arrInfo)) {
                 $template->Month = $this->dataMonthIndividuell($intStartAuswahl, $intEndeAuswahl, $arrFeiertage);
             }
 
-            $template->Frei = $GLOBALS['TL_LANG']['mailwurm_belegung']['legende']['frei'] ?? '';
-            $template->Belegt = $GLOBALS['TL_LANG']['mailwurm_belegung']['legende']['belegt'] ?? '';
+            $template->Frei = $GLOBALS['TL_LANG']['tonsinn_belegung']['legende']['frei'] ?? '';
+            $template->Belegt = $GLOBALS['TL_LANG']['tonsinn_belegung']['legende']['belegt'] ?? '';
             $template->RgbaFrei = $this->rgba($model->belegungsplan_color_frei, $model->belegungsplan_opacity_frei, '76,174,76');
             $template->RgbaBelegt = $this->rgba($model->belegungsplan_color_belegt, $model->belegungsplan_opacity_belegt, '212,63,58');
             $template->RgbaText = $this->rgba($model->belegungsplan_color_text, $model->belegungsplan_opacity_text, '51,51,51');
@@ -276,14 +276,14 @@ private function dataMonth(array $arrMonth, int $intStartAuswahl, array $arrFeie
         $intJahr = (int) date('Y', $intStartAuswahl);
         foreach ($arrMonth as $value) {
             $iDayMonths = (int) date('t', mktime(0, 0, 0, (int)$value, 1, $intJahr));
-            $result[$intJahr][$value]['Name'] = $GLOBALS['TL_LANG']['mailwurm_belegung']['month'][$value] ?? '';
+            $result[$intJahr][$value]['Name'] = $GLOBALS['TL_LANG']['tonsinn_belegung']['month'][$value] ?? '';
             $result[$intJahr][$value]['TageMonat'] = $iDayMonths;
             $result[$intJahr][$value]['ColSpan'] = $iDayMonths + 1;
             $intFirstDay = (int) date('N', mktime(0, 0, 0, (int)$value, 1, $intJahr));
             for ($f = 1, $i = $intFirstDay; $f <= $iDayMonths; $f++) {
                 $strClass = '';
-                $result[$intJahr][$value]['Days'][$f]['Day'] = $GLOBALS['TL_LANG']['mailwurm_belegung']['day'][$i] ?? '';
-                $result[$intJahr][$value]['Days'][$f]['DayCut'] = $GLOBALS['TL_LANG']['mailwurm_belegung']['short_cut_day'][$i] ?? '';
+                $result[$intJahr][$value]['Days'][$f]['Day'] = $GLOBALS['TL_LANG']['tonsinn_belegung']['day'][$i] ?? '';
+                $result[$intJahr][$value]['Days'][$f]['DayCut'] = $GLOBALS['TL_LANG']['tonsinn_belegung']['short_cut_day'][$i] ?? '';
                 $result[$intJahr][$value]['Days'][$f]['DayWeekNum'] = $i;
                 if (!empty($arrFeiertage[$intJahr][$value][$f])) {
                     $strClass = 'holiday';
@@ -313,14 +313,14 @@ private function dataMonth(array $arrMonth, int $intStartAuswahl, array $arrFeie
             $m = ($y === $intStartJahr) ? $intStartMonat : 1;
             for (; ; $m++) {
                 $iDayMonths = (int) date('t', mktime(0, 0, 0, $m, 1, $y));
-                $result[$y][$m]['Name'] = $GLOBALS['TL_LANG']['mailwurm_belegung']['month'][$m] ?? '';
+                $result[$y][$m]['Name'] = $GLOBALS['TL_LANG']['tonsinn_belegung']['month'][$m] ?? '';
                 $result[$y][$m]['TageMonat'] = $iDayMonths;
                 $result[$y][$m]['ColSpan'] = $iDayMonths + 1;
                 $intFirstDay = (int) date('N', mktime(0, 0, 0, $m, 1, $y));
                 for ($f = 1, $i = $intFirstDay; $f <= $iDayMonths; $f++) {
                     $strClass = '';
-                    $result[$y][$m]['Days'][$f]['Day'] = $GLOBALS['TL_LANG']['mailwurm_belegung']['day'][$i] ?? '';
-                    $result[$y][$m]['Days'][$f]['DayCut'] = $GLOBALS['TL_LANG']['mailwurm_belegung']['short_cut_day'][$i] ?? '';
+                    $result[$y][$m]['Days'][$f]['Day'] = $GLOBALS['TL_LANG']['tonsinn_belegung']['day'][$i] ?? '';
+                    $result[$y][$m]['Days'][$f]['DayCut'] = $GLOBALS['TL_LANG']['tonsinn_belegung']['short_cut_day'][$i] ?? '';
                     $result[$y][$m]['Days'][$f]['DayWeekNum'] = $i;
                     if (!empty($arrFeiertage[$y][$m][$f])) {
                         $strClass = 'holiday';
