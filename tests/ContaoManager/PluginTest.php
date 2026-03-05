@@ -6,10 +6,10 @@
 *
 * @license LGPL-3.0-or-later
 */
-namespace Mailwurm\BelegungsplanBundle\Tests\ContaoManager;
+namespace Tonsinn\BelegungsplanBundle\Tests\ContaoManager;
 use Contao\CoreBundle\ContaoCoreBundle;
-use Mailwurm\BelegungsplanBundle\MailwurmBelegungsplanBundle;
-use Mailwurm\BelegungsplanBundle\ContaoManager\Plugin;
+use Tonsinn\BelegungsplanBundle\TonsinnBelegungsplanBundle;
+use Tonsinn\BelegungsplanBundle\ContaoManager\Plugin;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use PHPUnit\Framework\TestCase;
@@ -24,7 +24,7 @@ class PluginTest extends TestCase {
     */
     public function testCanBeInstantiated() {
         $plugin = new Plugin();
-        $this->assertInstanceOf('Mailwurm\BelegungsplanBundle\ContaoManager\Plugin', $plugin);
+        $this->assertInstanceOf('Tonsinn\BelegungsplanBundle\ContaoManager\Plugin', $plugin);
     }
     /**
     * Tests returning the bundles.
@@ -34,8 +34,8 @@ class PluginTest extends TestCase {
         /** @var BundleConfig $config */
         $config = (new Plugin())->getBundles($parser)[0];
         $this->assertInstanceOf('Contao\ManagerPlugin\Bundle\Config\BundleConfig', $config);
-        $this->assertSame(MailwurmBelegungsplanBundle::class, $config->getName());
+        $this->assertSame(TonsinnBelegungsplanBundle::class, $config->getName());
         $this->assertSame([ContaoCoreBundle::class], $config->getLoadAfter());
-        $this->assertSame(['belegungsplan'], $config->getReplace());
+        $this->assertSame(['belegung'], $config->getReplace());
     }
 }

@@ -3,20 +3,20 @@
 	<file datatype="php" original="contao/languages/en/explain.php" source-language="en" target-language="de">
 		<body>
 			<trans-unit id="XPL.belegungsplan_color_frei">
-				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 4CAE4C.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Freie-Tage-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 4CAE4C.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Freie-Tage-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 4CAE4C.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Freie-Tage-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 4CAE4C.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Freie-Tage-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_color_belegt">
-				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is D43F3A.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Belegte-Tage-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist D43F3A.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Belegte-Tage-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is D43F3A.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Belegte-Tage-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist D43F3A.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Belegte-Tage-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_color_text">
-				<source>The colors for the category text and legend text can be found below. Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 333333.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Die Farben für Kategorietext und Legendentext finden sie weiter unten. Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 333333.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>The colors for the category text and legend text can be found below. Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 333333.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Die Farben für Kategorietext und Legendentext finden sie weiter unten. Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 333333.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_color_rahmen">
-				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is DDDDDD.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Tabellenrahmen-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist DDDDDD.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Tabellenrahmen-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is DDDDDD.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Tabellenrahmen-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist DDDDDD.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Tabellenrahmen-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_anzeige_linkText">
 				<source>If you have linked objects, you can make further settings by activating this checkbox. If not activated, the standard CSS properties are used.</source>
@@ -27,128 +27,128 @@
 				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 6610F2.</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_anzeige_kategorie">
-				<source>When activated, you have the option of making further settings.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Anzeige-Hauptkategorie-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Bei Aktivierung haben Sie die Möglichkeit weitere Einstellungen vorzunehmen.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Anzeige-Hauptkategorie-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>When activated, you have the option of making further settings.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Anzeige-Hauptkategorie-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Bei Aktivierung haben Sie die Möglichkeit weitere Einstellungen vorzunehmen.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Anzeige-Hauptkategorie-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_color_kategorie">
-				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is CCCCCC.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/HG-Kategoriezeile-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist CCCCCC.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/HG-Kategoriezeile-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is CCCCCC.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/HG-Kategoriezeile-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist CCCCCC.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/HG-Kategoriezeile-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_color_kategorietext">
-				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 000000.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Kategoriezeile-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 000000.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Kategoriezeile-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 000000.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Kategoriezeile-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 000000.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Kategoriezeile-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_anzeige_legende">
-				<source>When activated, you have the option of making further settings.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Anzeige-Legende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Bei Aktivierung haben Sie die Möglichkeit weitere Einstellungen vorzunehmen.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Anzeige-Legende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>When activated, you have the option of making further settings.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Anzeige-Legende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Bei Aktivierung haben Sie die Möglichkeit weitere Einstellungen vorzunehmen.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Anzeige-Legende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_color_legende_frei">
-				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is FFFFFF.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Legende-Frei-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist FFFFFF.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Legende-Frei-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is FFFFFF.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Legende-Frei-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist FFFFFF.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Legende-Frei-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_color_legende_belegt">
-				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is FFFFFF.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Legende-Belegt-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist FFFFFF.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Legende-Belegt-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is FFFFFF.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Legende-Belegt-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist FFFFFF.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Legende-Belegt-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_anzeige_wochenende">
 				<source>When activated, you have the option of making further settings.</source>
 				<target>Bei Aktivierung haben Sie die Möglichkeit weitere Einstellungen vorzunehmen.</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_bgcolor_wochenende">
-				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is CCCCCC.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Hintergrund-Wochenende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist CCCCCC.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Hintergrund-Wochenende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is CCCCCC.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Hintergrund-Wochenende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist CCCCCC.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Hintergrund-Wochenende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_color_wochenendetext">
-				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 333333.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Textfarbe-Wochenende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
-				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 333333.&lt;br&gt;&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Textfarbe-Wochenende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
+				<source>Enter a hexadecimal color value without the prefix #, e.g. FFFFFF for white, or use the color picker. Default is 333333.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Textfarbe-Wochenende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</source>
+				<target>Geben sie hier einen Hexadezimalen Farbwert ohne den Vorsatz # ein, z.Bsp. FFFFFF für Weiß, oder verwenden sie den Farbwähler. Default ist 333333.&lt;br&gt;&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Textfarbe-Wochenende-Belegungsplan.gif&quot; alt=&quot;&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.0.0">
 				<source>none</source>
 				<target>none</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.0.1">
-				<source>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-None.jpg&quot; alt=&quot;none&quot;&gt;</source>
-				<target>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-None.jpg&quot; alt=&quot;none&quot;&gt;</target>
+				<source>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-None.jpg&quot; alt=&quot;none&quot;&gt;</source>
+				<target>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-None.jpg&quot; alt=&quot;none&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.1.0">
 				<source>underline</source>
 				<target>underline</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.1.1">
-				<source>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline.jpg&quot; alt=&quot;underline&quot;&gt;</source>
-				<target>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline.jpg&quot; alt=&quot;underline&quot;&gt;</target>
+				<source>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-Underline.jpg&quot; alt=&quot;underline&quot;&gt;</source>
+				<target>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-Underline.jpg&quot; alt=&quot;underline&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.2.0">
 				<source>overline</source>
 				<target>overline</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.2.1">
-				<source>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-Overline.jpg&quot; alt=&quot;overline&quot;&gt;</source>
-				<target>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-Overline.jpg&quot; alt=&quot;overline&quot;&gt;</target>
+				<source>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-Overline.jpg&quot; alt=&quot;overline&quot;&gt;</source>
+				<target>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-Overline.jpg&quot; alt=&quot;overline&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.3.0">
 				<source>line-through</source>
 				<target>line-through</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.3.1">
-				<source>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-Line-Through.jpg&quot; alt=&quot;line-through&quot;&gt;</source>
-				<target>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-Line-Through.jpg&quot; alt=&quot;line-through&quot;&gt;</target>
+				<source>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-Line-Through.jpg&quot; alt=&quot;line-through&quot;&gt;</source>
+				<target>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-Line-Through.jpg&quot; alt=&quot;line-through&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.4.0">
 				<source>underline overline</source>
 				<target>underline overline</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.4.1">
-				<source>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline-Overline.jpg&quot; alt=&quot;underline overline&quot;&gt;</source>
-				<target>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline-Overline.jpg&quot; alt=&quot;underline overline&quot;&gt;</target>
+				<source>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-Underline-Overline.jpg&quot; alt=&quot;underline overline&quot;&gt;</source>
+				<target>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-Underline-Overline.jpg&quot; alt=&quot;underline overline&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.5.0">
 				<source>underline overline line-through</source>
 				<target>underline overline line-through</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationLine.5.1">
-				<source>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline-Overline-Line-Through.jpg&quot; alt=&quot;underline overline line-through&quot;&gt;</source>
-				<target>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Line-Underline-Overline-Line-Through.jpg&quot; alt=&quot;underline overline line-through&quot;&gt;</target>
+				<source>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-Underline-Overline-Line-Through.jpg&quot; alt=&quot;underline overline line-through&quot;&gt;</source>
+				<target>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Line-Underline-Overline-Line-Through.jpg&quot; alt=&quot;underline overline line-through&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationStyle.0.0">
 				<source>solid</source>
 				<target>solid</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationStyle.0.1">
-				<source>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Style-Solid.jpg&quot; alt=&quot;solid&quot;&gt;</source>
-				<target>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Style-Solid.jpg&quot; alt=&quot;solid&quot;&gt;</target>
+				<source>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Style-Solid.jpg&quot; alt=&quot;solid&quot;&gt;</source>
+				<target>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Style-Solid.jpg&quot; alt=&quot;solid&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationStyle.1.0">
 				<source>double</source>
 				<target>double</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationStyle.1.1">
-				<source>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Style-Double.jpg&quot; alt=&quot;double&quot;&gt;</source>
-				<target>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Style-Double.jpg&quot; alt=&quot;double&quot;&gt;</target>
+				<source>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Style-Double.jpg&quot; alt=&quot;double&quot;&gt;</source>
+				<target>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Style-Double.jpg&quot; alt=&quot;double&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationStyle.2.0">
 				<source>dotted</source>
 				<target>dotted</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationStyle.2.1">
-				<source>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Style-Dotted.jpg&quot; alt=&quot;dotted&quot;&gt;</source>
-				<target>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Style-Dotted.jpg&quot; alt=&quot;dotted&quot;&gt;</target>
+				<source>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Style-Dotted.jpg&quot; alt=&quot;dotted&quot;&gt;</source>
+				<target>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Style-Dotted.jpg&quot; alt=&quot;dotted&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationStyle.3.0">
 				<source>dashed</source>
 				<target>dashed</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationStyle.3.1">
-				<source>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Style-Dashed.jpg&quot; alt=&quot;dashed&quot;&gt;</source>
-				<target>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Style-Dashed.jpg&quot; alt=&quot;dashed&quot;&gt;</target>
+				<source>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Style-Dashed.jpg&quot; alt=&quot;dashed&quot;&gt;</source>
+				<target>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Style-Dashed.jpg&quot; alt=&quot;dashed&quot;&gt;</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationStyle.4.0">
 				<source>wavy</source>
 				<target>wavy</target>
 			</trans-unit>
 			<trans-unit id="XPL.belegungsplan_textDecorationStyle.4.1">
-				<source>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Style-Wavy.jpg&quot; alt=&quot;wavy&quot;&gt;</source>
-				<target>&lt;img src=&quot;/bundles/mailwurmbelegungsplan/Text-Decoration-Style-Wavy.jpg&quot; alt=&quot;wavy&quot;&gt;</target>
+				<source>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Style-Wavy.jpg&quot; alt=&quot;wavy&quot;&gt;</source>
+				<target>&lt;img src=&quot;/bundles/tonsinnbelegungsplan/Text-Decoration-Style-Wavy.jpg&quot; alt=&quot;wavy&quot;&gt;</target>
 			</trans-unit>
 		</body>
 	</file>

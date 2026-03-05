@@ -8,7 +8,7 @@
  *
  * @author Jan Karai <https://www.sachsen-it.de>
  */
-namespace Mailwurm\BelegungsplanBundle\ContaoManager;
+namespace Tonsinn\BelegungsplanBundle\ContaoManager;
 
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
@@ -25,7 +25,7 @@ class Plugin implements BundlePluginInterface
 	public function getBundles(ParserInterface $parser)
 	{
 		return [
-			BundleConfig::create('Mailwurm\BelegungsplanBundle\MailwurmBelegungsplanBundle')
+			BundleConfig::create('Tonsinn\BelegungsplanBundle\TonsinnBelegungsplanBundle')
 				->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
 				->setReplace(['belegung']),
 		];

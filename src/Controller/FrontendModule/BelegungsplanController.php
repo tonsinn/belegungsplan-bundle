@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mailwurm\BelegungsplanBundle\Controller\FrontendModule;
+namespace Tonsinn\BelegungsplanBundle\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
@@ -38,7 +38,7 @@ class BelegungsplanController extends AbstractFrontendModuleController
 
     protected function getResponse(FragmentTemplate $template, ModuleModel $model, Request $request): Response
     {
-        $GLOBALS['TL_CSS'][] = 'bundles/mailwurmbelegungsplan/belegungsplan.css||static';
+        $GLOBALS['TL_CSS'][] = 'bundles/tonsinnbelegungsplan/belegungsplan.css||static';
 
         // Contao erkennt Template-Namen ohne Slash als Legacy und setzt headline als String.
         // Die Twig-Basevorlage braucht aber headline.text / headline.tag_name.

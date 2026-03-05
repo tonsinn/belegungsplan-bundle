@@ -36,15 +36,15 @@ $legacyLoader = function ($class) {
         return;
     }
 
-    if (false !== strpos($class, '\\') && 0 !== strncmp($class, 'Mailwurm\\', 7)) {
+    if (false !== strpos($class, '\\') && 0 !== strncmp($class, 'Tonsinn\\', 7)) {
         return;
     }
 
-    if (0 === strncmp($class, 'Mailwurm\\', 7)) {
+    if (0 === strncmp($class, 'Tonsinn\\', 7)) {
         $class = substr($class, 7);
     }
 
-    $namespaced = 'Mailwurm\\'.$class;
+    $namespaced = 'Tonsinn\\'.$class;
 
     if (class_exists($namespaced) || interface_exists($namespaced) || trait_exists($namespaced)) {
         class_alias($namespaced, $class);

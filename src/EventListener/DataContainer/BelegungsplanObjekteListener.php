@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mailwurm\BelegungsplanBundle\EventListener\DataContainer;
+namespace Tonsinn\BelegungsplanBundle\EventListener\DataContainer;
 
 use Contao\Backend;
 use Contao\Config;

@@ -1,5 +1,5 @@
 {
-    "name": "mailwurm/belegungsplan-bundle",
+    "name": "tonsinn/belegungsplan-bundle",
     "type": "contao-bundle",
     "keywords": ["contao", "contao-bundle", "bundle", "belegungsplan", "contao 5"],
     "description": "Contao 5 Belegungspläne erstellen",
@@ -21,18 +21,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Mailwurm\\BelegungsplanBundle\\": "src/"
+            "Tonsinn\\BelegungsplanBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mailwurm\\BelegungsplanBundle\\Tests\\": "tests/"
+            "Tonsinn\\BelegungsplanBundle\\Tests\\": "tests/"
         }
     },
     "config": {
         "preferred-install": "dist"
     },
     "extra": {
-        "contao-manager-plugin": "Mailwurm\\BelegungsplanBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Tonsinn\\BelegungsplanBundle\\ContaoManager\\Plugin"
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mailwurm\BelegungsplanBundle\EventListener\DataContainer;
+namespace Tonsinn\BelegungsplanBundle\EventListener\DataContainer;
 
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\Image;
