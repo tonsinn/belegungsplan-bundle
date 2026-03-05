@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Contao\System;
 use Contao\BackendUser;
-use Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCategoryListener;
+use Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCategoryListener;
 
 System::loadLanguageFile('tl_content');
 

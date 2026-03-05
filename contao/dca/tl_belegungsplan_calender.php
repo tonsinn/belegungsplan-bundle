@@ -36,8 +36,8 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_calender'] = array
 		'ctable'				=> array('tl_content'),
 		'switchToEdit'			=> true,
 		'enableVersioning'		=> true,
-		'onsubmit_callback'		=> array([\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCalenderListener::class, 'loadUeberschneidung']),
-		'ondelete_callback'		=> array([\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCalenderListener::class, 'calenderOndeleteCallback']),
+		'onsubmit_callback'		=> array([\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCalenderListener::class, 'loadUeberschneidung']),
+		'ondelete_callback'		=> array([\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCalenderListener::class, 'calenderOndeleteCallback']),
 		'sql' => array
 		(
 			'keys' => array
@@ -56,7 +56,7 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_calender'] = array
 			'fields'                  => array('startDate DESC'),
 			'headerFields'            => array('name'),
 			'panelLayout'             => 'filter;sort,search,limit',
-			'child_record_callback'   => [\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCalenderListener::class, 'listCalender']
+			'child_record_callback'   => [\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCalenderListener::class, 'listCalender']
 		),
 		'label' => array
 		(
@@ -154,7 +154,7 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_calender'] = array
 			'eval'			=> array('rgxp'=>'date', 'mandatory'=>true, 'doNotCopy'=>true, 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
 			'save_callback'	=> array
 			(
-				[\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCalenderListener::class, 'setEndDate']
+				[\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCalenderListener::class, 'setEndDate']
 			),
 			'sql'			=> "int(10) unsigned NULL"
 		),
@@ -170,7 +170,7 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_calender'] = array
 			'eval'			=> array('rgxp'=>'date', 'mandatory'=>true, 'doNotCopy'=>true, 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
 			'save_callback'	=> array
 			(
-				[\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCalenderListener::class, 'loadEndDate']
+				[\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanCalenderListener::class, 'loadEndDate']
 			),
 			'sql'			=> "int(10) unsigned NULL"
 		),

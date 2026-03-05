@@ -56,7 +56,7 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_feiertage'] = array
 		(
 			'fields'			=> array('title'),
 			'format'			=> '%s',
-			'label_callback'	=> [\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'listCalender']
+			'label_callback'	=> [\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'listCalender']
 		),
 		'global_operations' => array
 		(
@@ -151,7 +151,7 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_feiertage'] = array
 			'eval'				=> array('rgxp'=>'date', 'mandatory'=>true, 'doNotCopy'=>true, 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
 			'save_callback'		=> array
 			(
-				[\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'getVorhanden']
+				[\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'getVorhanden']
 			),
 			'sql'				=> "int(10) unsigned NULL"
 		),
@@ -173,12 +173,12 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_feiertage'] = array
 			'explanation'		=> 'feiertage_hintergrund',
 			'load_callback'		=> array
 			(
-				[\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'setRgbToHexTextcolor']
+				[\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'setRgbToHexTextcolor']
 			),
 			'eval'				=> array('maxlength'=>6, 'minlength'=>6, 'mandatory'=>true, 'colorpicker'=>true, 'isHexColor'=>true, 'decodeEntities'=>true, 'tl_class'=>'w33 wizard clr', 'helpwizard'=>true),
 			'save_callback'		=> array
 			(
-				[\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'setRgbToHexHintergrund']
+				[\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'setRgbToHexHintergrund']
 			),
 			'sql'				=> "varchar(20) NOT NULL default ''"
 		),
@@ -205,12 +205,12 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_feiertage'] = array
 			'explanation'		=> 'feiertage_textcolor',
 			'load_callback'		=> array
 			(
-				[\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'setRgbToHexTextcolor']
+				[\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'setRgbToHexTextcolor']
 			),
 			'eval'				=> array('maxlength'=>6, 'minlength'=>6, 'mandatory'=>true, 'colorpicker'=>true, 'isHexColor'=>true, 'decodeEntities'=>true, 'tl_class'=>'w33 wizard clr', 'helpwizard'=>true),
 			'save_callback'		=> array
 			(
-				[\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'setRgbToHexHintergrund']
+				[\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanFeiertageListener::class, 'setRgbToHexHintergrund']
 			),
 			'sql'				=> "varchar(20) NOT NULL default ''"
 		),

@@ -47,7 +47,7 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_objekte'] = array(
 			'fields'                  => array('sorting'),
 			'panelLayout'             => 'filter;sort,search,limit',
 			'headerFields'            => array('title'),
-			'child_record_callback'   => [\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanObjekteListener::class, 'listQuestions']
+			'child_record_callback'   => [\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanObjekteListener::class, 'listQuestions']
 		),
 		'global_operations' => array(
 			'all' => array(
@@ -67,7 +67,7 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_objekte'] = array(
 				'label'               => &$GLOBALS['TL_LANG']['tl_belegungsplan_objekte']['editheader'],
 				'href'                => 'act=edit',
 				'icon'                => 'edit.svg',
-				'button_callback'     => [\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanObjekteListener::class, 'editHeader']
+				'button_callback'     => [\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanObjekteListener::class, 'editHeader']
 			),
 			'delete' => array(
 				'label'               => &$GLOBALS['TL_LANG']['tl_belegungsplan_objekte']['delete'],
@@ -78,7 +78,7 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_objekte'] = array(
 				'label'               => &$GLOBALS['TL_LANG']['tl_belegungsplan_objekte']['toggle'],
 				'icon'                => 'visible.svg',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
-				'button_callback'     => [\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanObjekteListener::class, 'toggleIcon']
+				'button_callback'     => [\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanObjekteListener::class, 'toggleIcon']
 			),
 			'show' => array(
 				'label'               => &$GLOBALS['TL_LANG']['tl_belegungsplan_objekte']['show'],
@@ -186,7 +186,7 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_objekte'] = array(
 			'eval'                    => array('multiple'=>true, 'size'=>2, 'tl_class'=>'w50 clr'),
 			'save_callback'	=> array
 			(
-				[\Mailwurm\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanObjekteListener::class, 'setEmptyCssID']
+				[\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanObjekteListener::class, 'setEmptyCssID']
 			),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
