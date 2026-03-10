@@ -331,7 +331,6 @@
 .blp-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
     box-sizing: border-box;
 }
 
