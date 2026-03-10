@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Bundle Does
 
-`mailwurm/belegungsplan-bundle` is a Contao 5 bundle for creating occupancy/booking schedules ("Belegungspläne"). It renders a calendar grid showing bookings across multiple objects (e.g., rental rooms) grouped by categories, with configurable colors and display modes.
+`tonsinn/belegungsplan-bundle` is a Contao 5 bundle for creating occupancy/booking schedules ("Belegungspläne"). It renders a calendar grid showing bookings across multiple objects (e.g., rental rooms) grouped by categories, with configurable colors and display modes.
 
 ## Commands
 
@@ -15,7 +15,7 @@ Run tests from the bundle root (requires the Contao application's autoloader):
 vendor/bin/phpunit -c belegungsplan-bundle/phpunit.xml.dist
 
 # Run a single test file
-vendor/bin/phpunit -c belegungsplan-bundle/phpunit.xml.dist belegungsplan-bundle/tests/MailwurmBelegungsplanBundleTest.php
+vendor/bin/phpunit -c belegungsplan-bundle/phpunit.xml.dist belegungsplan-bundle/tests/TonsinnBelegungsplanBundleTest.php
 ```
 
 No build step, linter, or CI config is configured in this bundle.

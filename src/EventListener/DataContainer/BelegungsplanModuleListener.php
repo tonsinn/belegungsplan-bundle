@@ -70,6 +70,23 @@ class BelegungsplanModuleListener
         // Placeholder – subpalette switching handled via submitOnChange
     }
 
+    /**
+     * load_callback for belegungsplan_template:
+     * Pre-selects the appropriate default template when creating a new module.
+     */
+    public function loadTemplateDefault(mixed $varValue, DataContainer $dc): mixed
+    {
+        if ($varValue !== '') {
+            return $varValue;
+        }
+
+        $type = (string) ($dc->activeRecord->type ?? '');
+
+        return $type === 'belegungsplan_gekachelt'
+            ? 'mod_belegungsplan_bootstrap'
+            : 'mod_belegungsplan_table';
+    }
+
     #[AsCallback(table: 'tl_module', target: 'fields.belegungsplan_individuellMonateEnde.save')]
     public function verifyEndDate(mixed $varValue, DataContainer $dc): mixed
     {

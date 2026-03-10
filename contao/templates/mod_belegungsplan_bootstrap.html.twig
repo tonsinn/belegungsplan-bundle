@@ -120,8 +120,8 @@
         ">
             <script src="{{ asset('bundles/tonsinnbelegungsplan/belegungsplan.js') }}" defer></script>
             {% if number_year > 1 %}
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="blp-grid row">
+                    <div class="blp-grid-item-wide col-lg-4 col-md-4 col-sm-6 col-12">
                         <form method="get" class="belegungsplan-year-select">
                             <select name="belegyear" class="form-select">
                                 {% for singleyear in selectable_year %}
@@ -134,11 +134,11 @@
                 </div>
             {% endif %}
 
-            <div class="row">
+            <div class="blp-grid row">
             {% for year, months in Month %}
                 {% for month, monthData in months %}
                     {% set modalId = 'Belegungsplan' ~ year ~ (month < 10 ? '0'~month : month) %}
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-12 thumbnail">
+                    <div class="blp-grid-item col-lg-3 col-md-3 col-sm-6 col-12 thumbnail">
                         <div class="blp-month-box">
                         <p class="text-center">{{ monthData.Name }} {{ year }}</p>
 
@@ -182,7 +182,7 @@
                         </div>{# /blp-month-box #}
 
                         {# Bootstrap 5 Modal mit vollständiger Detailtabelle #}
-                        <div id="{{ modalId }}" class="modal modal-wide fade" tabindex="-1" aria-labelledby="{{ modalId }}Label" aria-hidden="true">
+                        <div id="{{ modalId }}" class="modal modal-wide fade" tabindex="-1" aria-labelledby="{{ modalId }}Label" aria-hidden="true" style="display:none;">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">

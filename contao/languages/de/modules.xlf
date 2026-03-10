@@ -57,6 +57,14 @@
 				<source>Adds a list of occupancy plans to the page</source>
 				<target>Fügt der Seite eine Liste von Belegungsplänen hinzu</target>
 			</trans-unit>
+		<trans-unit id="FMD.belegungsplan_gekachelt.0">
+				<source>Booking calendar tiled</source>
+				<target>Belegungsplan-Gekachelt</target>
+			</trans-unit>
+			<trans-unit id="FMD.belegungsplan_gekachelt.1">
+				<source>Adds a tiled view of occupancy plans to the page</source>
+				<target>Fügt der Seite eine gekachelte Ansicht von Belegungsplänen hinzu</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

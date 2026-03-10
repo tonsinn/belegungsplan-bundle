@@ -43,6 +43,12 @@
 			<trans-unit id="FMD.belegungsplan.1">
 				<source>Adds a list of occupancy plans to the page</source>
 			</trans-unit>
+		<trans-unit id="FMD.belegungsplan_gekachelt.0">
+				<source>Booking calendar tiled</source>
+			</trans-unit>
+			<trans-unit id="FMD.belegungsplan_gekachelt.1">
+				<source>Adds a tiled view of occupancy plans to the page</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

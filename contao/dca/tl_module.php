@@ -41,6 +41,7 @@ $GLOBALS['TL_DCA']['tl_module']['palettes']['belegungsplan'] =
         'belegungsplan_vollbelegung;'.
     '{template_legend},belegungsplan_template;' .
     '{expert_legend:hide},guests,cssID';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['belegungsplan_gekachelt'] = $GLOBALS['TL_DCA']['tl_module']['palettes']['belegungsplan'];
 $GLOBALS['TL_DCA']['tl_module']['subpalettes']['belegungsplan_showAusgabe_standard'] = 'belegungsplan_month';
 $GLOBALS['TL_DCA']['tl_module']['subpalettes']['belegungsplan_showAusgabe_automatic'] = 'belegungsplan_anzahlMonate';
 $GLOBALS['TL_DCA']['tl_module']['subpalettes']['belegungsplan_showAusgabe_individuell'] = 'belegungsplan_individuellMonateStart,belegungsplan_individuellMonateEnde';
@@ -500,6 +501,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['belegungsplan_template'] = array(
 	{
 		return \Contao\Controller::getTemplateGroup('mod_belegungsplan_');
 	},
+	'load_callback'			=> [[\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanModuleListener::class, 'loadTemplateDefault']],
 	'eval'					=> array('mandatory'=>true, 'includeBlankOption'=>true, 'tl_class'=>'w50'),
 	'sql'					=> "varchar(64) NOT NULL default ''"
 );
