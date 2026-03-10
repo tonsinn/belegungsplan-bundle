@@ -33,6 +33,7 @@
         "preferred-install": "dist"
     },
     "extra": {
-        "contao-manager-plugin": "Tonsinn\\BelegungsplanBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Tonsinn\\BelegungsplanBundle\\ContaoManager\\Plugin",
+        "logo": "https://raw.githubusercontent.com/tonsinn/belegungsplan-bundle/master/public/belegungsplan.svg"
     }
 }
