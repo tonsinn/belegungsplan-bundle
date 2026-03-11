@@ -47,8 +47,7 @@
                             <tr>
                                 <th>
                                     {% if AnzeigeLegende %}
-                                        <span class="blp-legend">
-                                        </span>
+                                        <span class="blp-legend-item blp-success">{{ Frei }}</span>&nbsp;<span class="blp-legend-item blp-danger">{{ Belegt }}</span>
                                     {% endif %}
                                 </th>
                                 {% for day, dayData in monthData.Days %}

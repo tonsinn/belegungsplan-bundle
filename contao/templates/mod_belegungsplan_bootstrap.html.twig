@@ -64,15 +64,19 @@
             .blp-month-box > p { padding: 6px 8px 4px; margin-bottom: 0; }
             .table > tbody > tr > td.success { background-color: var(--blp-color-frei) !important; }
             {% if AnzeigeLegende %}
-            .blp-success, .blp-success:hover, .blp-success:focus, .blp-success:active {
+            .blp-legend-item {
+                display: inline-block;
+                padding: 2px 8px;
+                border-radius: 3px;
+                font-size: 0.85em;
+            }
+            .blp-legend-item.blp-success {
                 color: var(--blp-color-legende-frei);
                 background-color: var(--blp-color-frei);
-                border-color: var(--blp-color-frei);
             }
-            .blp-danger, .blp-danger:hover, .blp-danger:focus, .blp-danger:active {
+            .blp-legend-item.blp-danger {
                 color: var(--blp-color-legende-belegt);
                 background-color: var(--blp-color-belegt);
-                border-color: var(--blp-color-belegt);
             }
             {% endif %}
             .table > tbody > tr > td.danger { background-color: var(--blp-color-belegt) !important; }
@@ -196,7 +200,7 @@
                                                     <tr>
                                                         <th>
                                                             {% if AnzeigeLegende %}
-                                                                <button type="button" class="btn btn-sm blp-success">{{ Frei }}</button>&nbsp;<button type="button" class="btn btn-sm blp-danger">{{ Belegt }}</button>
+                                                                <span class="blp-legend-item blp-success">{{ Frei }}</span>&nbsp;<span class="blp-legend-item blp-danger">{{ Belegt }}</span>
                                                             {% endif %}
                                                         </th>
                                                         {% for day, dayData in monthData.Days %}

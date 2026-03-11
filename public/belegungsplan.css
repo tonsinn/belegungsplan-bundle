@@ -194,33 +194,26 @@
     flex-wrap: wrap;
 }
 
+.blp-legend-item,
 .blp-success,
 .blp-danger {
     display: inline-block;
     padding: 2px 8px;
-    border: 1px solid transparent;
     border-radius: 3px;
     font-size: 0.8rem;
     line-height: 1.5;
-    cursor: default;
 }
 
-.blp-success,
-.blp-success:hover,
-.blp-success:focus,
-.blp-success:active {
+.blp-legend-item.blp-success,
+.blp-success {
     color: var(--blp-color-legende-frei);
     background-color: var(--blp-color-frei);
-    border-color: var(--blp-color-frei);
 }
 
-.blp-danger,
-.blp-danger:hover,
-.blp-danger:focus,
-.blp-danger:active {
+.blp-legend-item.blp-danger,
+.blp-danger {
     color: var(--blp-color-legende-belegt);
     background-color: var(--blp-color-belegt);
-    border-color: var(--blp-color-belegt);
 }
 
 /* ── Info-Meldungen ──────────────────────────────────────────── */
