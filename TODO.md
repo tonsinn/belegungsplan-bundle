@@ -15,11 +15,10 @@ Erledigt (CLI-/Container-Ebene, gegen 5.3.51 / 5.7.13 / 6.0.0 verifiziert):
       am fehlenden `list.label` in `tl_belegungsplan_objekte`.
 
 Offen:
-- [ ] Entscheidung: PHP-Constraint `^8.2` (jetzt) vs. `^8.4` (Upstream-Stand v5.0.9).
-      Senkung war nötig, damit 5.3-LTS-Instanzen auf PHP 8.2/8.3 das Bundle nutzen können.
-- [ ] Wegwerf-Testinstallationen auf dem Server aufräumen, wenn nicht mehr gebraucht:
-      `~/www/compat-test-53`, `~/www/compat-test-60` (je einige hundert MB; prüfen, ob sie
-      über den Default-vHost öffentlich erreichbar sind)
+- [x] PHP-Constraint bleibt `^8.2` (seit v5.1.0 veröffentlicht), damit 5.3-LTS-Instanzen
+      auf PHP 8.2/8.3 das Bundle nutzen können.
+- [x] Wegwerf-Testinstallationen `~/www/compat-test-53` und `~/www/compat-test-60` auf dem
+      Server gelöscht.
 - [ ] Demo-Instanz belegungsplan.tonsinn.de läuft aktuell über das Composer-Path-Repo auf
       `dev-main` (Symlink auf `bundles/belegungsplan-bundle`). Nach dem v5.1.0-Release
       entscheiden, ob sie auf die Packagist-Version zurückgestellt wird

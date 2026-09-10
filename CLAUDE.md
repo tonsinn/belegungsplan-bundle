@@ -70,8 +70,8 @@ the published version from Packagist instead, and you end up testing the wrong c
 The demo install carries third-party bundles (RockSolid suite, `terminal42/contao-url-rewrite`,
 `heimseiten/...`) that are pinned to Contao 5.x, so that instance **cannot** be switched to
 Contao 6. Cross-version checks therefore run in throwaway installs on the same server
-(`~/www/compat-test-53`, `~/www/compat-test-60`) containing only `contao/manager-bundle`
-plus this bundle. Note that Composer blocks every published Contao 5.3.x release by default
+(e.g. `~/www/compat-test-53`, `~/www/compat-test-60`, created on demand and deleted
+afterwards) containing only `contao/manager-bundle` plus this bundle. Note that Composer blocks every published Contao 5.3.x release by default
 because of security advisories; the throwaway install uses `--no-security-blocking` purely to
 test dependency resolution.
 
