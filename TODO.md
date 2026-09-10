@@ -31,8 +31,12 @@ Offen:
       zurückziehen. (Betrifft nur die lokale Arbeitskopie, nicht das Repository.)
 - [x] README.md: Changelog-Auszug auf v5.1.0 aktualisiert
 
-## Fachliche Punkte
-- 'Belegungsplan Liste' muss Monatsname und Jahr hinter Titel anzeigen
+## Fachliche Punkte — Release-Gate für v5.1.1
+**Beide Punkte müssen vor der Veröffentlichung von v5.1.1 erledigt sein.**
+- [x] 'Belegungsplan Liste' zeigt Monatsname und Jahr hinter dem Kategorie-Titel
+      (`mod_belegungsplan_table.html.twig`, `<span class="blp-category-month">`).
+      Sichtbar nur, wenn „Hauptkategorien anzeigen" aktiv ist — die Kategoriezeile
+      wird sonst gar nicht gerendert. Browser-Sichtprüfung steht noch aus.
 - Belegungsplan.svg ist für 360x360 optimiert statt jetziger Grafik
   Metadaten-Repo meta/tonsinn/belegungsplan-bundle/logo.svg: identisch mit dem Original und
   bereits gemergt. Für das neue Logo bräuchte es einen eigenen, kleinen PR an

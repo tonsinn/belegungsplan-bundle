@@ -1,5 +1,11 @@
 # Contao Belegungsplan-Bundle Changelog
 
+### v5.1.1 (unveröffentlicht)
+#### Belegungsplan-Liste
+- Monatsname und Jahr werden jetzt zusätzlich hinter dem Kategorie-Titel angezeigt
+  (nur bei aktivierter Option „Hauptkategorien anzeigen"). Die Angabe steht in einem
+  `<span class="blp-category-month">` und ist damit separat gestaltbar.
+
 ### v5.1.0 Stable (10.09.2026)
 #### Contao-Kompatibilität
 - Unterstützung für **Contao 6.0** ergänzt
