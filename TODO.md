@@ -34,15 +34,13 @@ Offen:
       DCA genutzten Klassen `w25`/`w33` bringt Contao-Core selbst mit (in 5.3 wie 6.0).
 
 ## Fachliche Punkte — waren Release-Gate für v5.1.1
-Beide mit v5.1.1 (10.09.2026) erledigt. Der zugehörige Metadaten-PR ist eröffnet und
-wartet nur noch auf das Review der Contao-Maintainer.
+Beide mit v5.1.1 (10.09.2026) erledigt, der zugehörige Metadaten-PR ist gemerged.
 - [x] 'Belegungsplan Liste' zeigt Monatsname und Jahr hinter dem Kategorie-Titel
       (`mod_belegungsplan_table.html.twig`, `<span class="blp-category-month">`).
       Sichtbar nur, wenn „Hauptkategorien anzeigen" aktiv ist — die Kategoriezeile
       wird sonst gar nicht gerendert.
 - [x] `public/belegungsplan.svg` durch die neue, für 360×360 optimierte Grafik ersetzt.
       Wirkt über `extra.logo` in der composer.json auf Contao Manager und Packagist.
-- [x] PR an `contao/package-metadata` eröffnet: **#790** „[tonsinn/belegungsplan-bundle]
-      Update logo and mention Contao 6" (Logo + „Contao 5 und 6" in de.yml/en.yml).
-      Wartet auf Review durch die Contao-Maintainer.
-      https://github.com/contao/package-metadata/pull/790
+- [x] PR an `contao/package-metadata` **#790** „[tonsinn/belegungsplan-bundle] Update logo
+      and mention Contao 6" (Logo + „Contao 5 und 6" in de.yml/en.yml) am 10.09.2026 von
+      @xchs gemerged. https://github.com/contao/package-metadata/pull/790
