@@ -10,11 +10,11 @@ Erledigt (CLI-/Container-Ebene, gegen 5.3.51 / 5.7.13 / 6.0.0 verifiziert):
 - [x] Contao-6-Breaking-Changes geprüft (kein `.html5`, kein `@Contao_Global`, kein
       `|insert_tag_raw`; `decodeEntities` muss bleiben, `Widget::generate()` unkritisch)
 
+- [x] Funktionstest im Browser unter Contao 6.0 und 5.3 durchgeführt (10.09.2026).
+      Dabei gefunden und mit v5.1.2 behoben: Anlegen eines Objekts in Contao 6 scheiterte
+      am fehlenden `list.label` in `tl_belegungsplan_objekte`.
+
 Offen:
-- [ ] **Funktionstest im Browser** steht noch aus (bewusst zurückgestellt): Backend-DCA
-      aller vier Tabellen + `tl_module`-Palette anlegen/speichern, Frontend in allen drei
-      `belegungsplan_showAusgabe`-Modi rendern. Braucht für 5.3/6.0 eine eigene
-      Subdomain/vHost in KeyHelp — per SSH nicht anlegbar.
 - [ ] Entscheidung: PHP-Constraint `^8.2` (jetzt) vs. `^8.4` (Upstream-Stand v5.0.9).
       Senkung war nötig, damit 5.3-LTS-Instanzen auf PHP 8.2/8.3 das Bundle nutzen können.
 - [ ] Wegwerf-Testinstallationen auf dem Server aufräumen, wenn nicht mehr gebraucht:
@@ -26,9 +26,7 @@ Offen:
       (`bin/remote-uninstall.sh` + `composer require tonsinn/belegungsplan-bundle:^5.1`).
 - [ ] Optional: `.github/workflows/ci.yml` mit Matrix `php: [8.2, 8.3, 8.4]` ×
       `contao: [5.3.*, 5.7.*, 6.0.*]` (`composer validate` + `composer install`)
-- [ ] Lokale Git-Zugangsdaten: die Remote-URL in `.git/config` enthält Anmeldedaten im
-      Klartext. Auf SSH oder einen Credential-Helper umstellen und die alten Daten
-      zurückziehen. (Betrifft nur die lokale Arbeitskopie, nicht das Repository.)
+- [x] Lokale Git-Remote auf SSH umgestellt, keine Anmeldedaten mehr in `.git/config`.
 - [x] README.md: Changelog-Auszug auf v5.1.0 aktualisiert
 
 ## Sonstiges
@@ -42,7 +40,7 @@ wartet nur noch auf das Review der Contao-Maintainer.
 - [x] 'Belegungsplan Liste' zeigt Monatsname und Jahr hinter dem Kategorie-Titel
       (`mod_belegungsplan_table.html.twig`, `<span class="blp-category-month">`).
       Sichtbar nur, wenn „Hauptkategorien anzeigen" aktiv ist — die Kategoriezeile
-      wird sonst gar nicht gerendert. Browser-Sichtprüfung steht noch aus.
+      wird sonst gar nicht gerendert.
 - [x] `public/belegungsplan.svg` durch die neue, für 360×360 optimierte Grafik ersetzt.
       Wirkt über `extra.logo` in der composer.json auf Contao Manager und Packagist.
 - [x] PR an `contao/package-metadata` eröffnet: **#790** „[tonsinn/belegungsplan-bundle]

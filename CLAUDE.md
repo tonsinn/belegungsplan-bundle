@@ -15,7 +15,13 @@ Verified (composer resolution, container build, Twig lint, PHP lint):
 - **Contao 5.7.13** on PHP 8.5 (the remote test install)
 - **Contao 6.0.0** on PHP 8.5
 
+Backend and frontend were additionally tested by hand in the browser on Contao 6.0 and 5.3
+(v5.1.2). The CLI checks above did not catch the one runtime bug found there (missing
+`list.label` in `tl_belegungsplan_objekte`), so repeat a browser pass after DCA changes.
+
 Contao-6-relevant notes:
+- Contao 6 builds record labels from `list.label.fields` even in sorting mode 4. Every DCA
+  needs a `label` block, even if the list is rendered via `child_record_callback`.
 - Contao 6 removed input encoding. Values are stored raw and must be escaped on output —
   the controller and the DCA listeners already do this via `StringUtil::specialchars()`.
   Keep that pattern for new code.
