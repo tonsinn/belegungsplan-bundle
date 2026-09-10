@@ -1,4 +1,4 @@
-# Contao 5.7 Belegungsplan Bundle
+# Contao Belegungsplan Bundle
 
 [![](https://img.shields.io/packagist/v/tonsinn/belegungsplan-bundle.svg?style=flat-square)](https://packagist.org/packages/tonsinn/belegungsplan-bundle)
 [![](https://img.shields.io/packagist/dt/tonsinn/belegungsplan-bundle.svg?style=flat-square)](https://packagist.org/packages/tonsinn/belegungsplan-bundle)
@@ -6,6 +6,12 @@
 
 Contao 5 Bundle zur Erstellung von Belegungsplänen. Basierend auf der Arbeit von Jan Karai (mailwurm/belegungsplan-bundle).
 
+
+## Systemvoraussetzungen
+| | |
+|---|---|
+| Contao | 5.3 LTS, 5.7 LTS oder 6.0 |
+| PHP | ab 8.2 (Contao 6 setzt selbst PHP 8.4 voraus) |
 
 ## Installation
 ```bash

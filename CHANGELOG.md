@@ -1,5 +1,28 @@
 # Contao Belegungsplan-Bundle Changelog
 
+### v5.1.0 (unveröffentlicht)
+#### Contao-Kompatibilität
+- Unterstützung für **Contao 6.0** ergänzt
+- Unterstützung auf **Contao 5.3 LTS** erweitert (Support durch Contao bis 02/2028)
+- Composer-Constraint: `contao/core-bundle: ^5.3 || ^6.0` (zuvor `^5.7`)
+- PHP-Anforderung von `^8.4` auf `^8.2` gesenkt, damit Contao-5.3-Installationen
+  auf PHP 8.2/8.3 das Bundle nutzen können. Der Code enthält keine PHP-8.4-Syntax
+  oder -Funktionen (gegen PHP 8.2–8.5 geprüft).
+- Geprüft mit Contao 5.3.51 (PHP 8.3), 5.7.13 (PHP 8.5) und 6.0.0 (PHP 8.5):
+  Composer-Auflösung, Symfony-Container-Build, Service-/Fragment-Registrierung,
+  Twig- und PHP-Lint jeweils fehlerfrei.
+- Keine Code-Änderungen für Contao 6 nötig: keine `.html5`-Templates, kein
+  `@Contao_Global`-Namespace, kein `|insert_tag_raw`; die Ausgabe wird bereits
+  konsequent per `StringUtil::specialchars()` escaped (passend zum Wegfall des
+  Input-Encodings in Contao 6).
+#### Entwicklungs-Workflow
+- Remote-Testinstallation unter belegungsplan.tonsinn.de statt lokalem DDEV:
+  `testinstall.env(.example)` + `bin/remote-install.sh`, `bin/sync-belegungsplan.sh`,
+  `bin/remote-uninstall.sh`
+#### Dokumentation
+- `CLAUDE.md` korrigiert: beschrieb noch die vor v5.0.0 entfernte Legacy-Struktur
+  (`ModuleBelegungsplan`, doppelte DCA-Verzeichnisse, `.html5`-Templates)
+
 ### v5.0.0 Stable (05.03.2026)
 #### Allgemein
 - Tiefgreifende Weiterentwicklung auf Kompatibilität mit Contao 5.7

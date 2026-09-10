@@ -1,0 +1,4 @@
+# Shell-Skripte muessen LF behalten - sie laufen auf dem Linux-Testserver bzw.
+# unter WSL. Mit core.autocrlf=true wuerden sie sonst beim Checkout unter Windows
+# CRLF bekommen und mit "bad interpreter: /usr/bin/env bash^M" scheitern.
+*.sh text eol=lf
