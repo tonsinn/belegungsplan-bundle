@@ -37,14 +37,15 @@ Offen:
       die Backend-Icon-Regel `#tl_navigation .group-beleg`. Entfernen oder wieder einbinden.
 
 ## Fachliche Punkte — waren Release-Gate für v5.1.1
-Bundle-seitig beide mit v5.1.1 (10.09.2026) erledigt. Offen bleibt nur der PR an
-das externe Metadaten-Repo (siehe unten).
+Beide mit v5.1.1 (10.09.2026) erledigt. Der zugehörige Metadaten-PR ist eröffnet und
+wartet nur noch auf das Review der Contao-Maintainer.
 - [x] 'Belegungsplan Liste' zeigt Monatsname und Jahr hinter dem Kategorie-Titel
       (`mod_belegungsplan_table.html.twig`, `<span class="blp-category-month">`).
       Sichtbar nur, wenn „Hauptkategorien anzeigen" aktiv ist — die Kategoriezeile
       wird sonst gar nicht gerendert. Browser-Sichtprüfung steht noch aus.
 - [x] `public/belegungsplan.svg` durch die neue, für 360×360 optimierte Grafik ersetzt.
       Wirkt über `extra.logo` in der composer.json auf Contao Manager und Packagist.
-- [ ] **Offen:** PR an `contao/package-metadata` für
-      `meta/tonsinn/belegungsplan-bundle/logo.svg` (dort liegt noch die alte Grafik).
-      Die fertige Datei ist identisch mit `public/belegungsplan.svg`.
+- [x] PR an `contao/package-metadata` eröffnet: **#790** „[tonsinn/belegungsplan-bundle]
+      Update logo and mention Contao 6" (Logo + „Contao 5 und 6" in de.yml/en.yml).
+      Wartet auf Review durch die Contao-Maintainer.
+      https://github.com/contao/package-metadata/pull/790
