@@ -1,6 +1,6 @@
 # Contao Belegungsplan-Bundle Changelog
 
-### v5.1.2 (unveröffentlicht)
+### v5.1.2 Stable (10.09.2026)
 #### Fehlerbehebung
 - Contao 6: Anlegen eines Objekts brach mit „The arguments array must contain 1 items,
   0 given" ab. `tl_belegungsplan_objekte` hatte keine `list.label`-Konfiguration, die

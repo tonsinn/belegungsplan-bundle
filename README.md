@@ -25,6 +25,11 @@ Eine ausführliche Dokumentation zu den Komponenten finden sie auf der [**Projek
 
 ## Der neueste Changelog
 
+### v5.1.2 (10.09.2026)
+
+#### Fehlerbehebung:
+- Contao 6: Anlegen eines Objekts brach mit „The arguments array must contain 1 items, 0 given" ab
+
 ### v5.1.1 (10.09.2026)
 
 #### Logo:
