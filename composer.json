@@ -2,7 +2,7 @@
     "name": "tonsinn/belegungsplan-bundle",
     "type": "contao-bundle",
     "keywords": ["contao", "contao-bundle", "bundle", "belegungsplan", "contao 5"],
-    "description": "Contao 5 Belegungspläne erstellen",
+    "description": "Contao 5 oder 6 Belegungspläne erstellen",
     "license": "LGPL-3.0-or-later",
     "authors": [
         {
