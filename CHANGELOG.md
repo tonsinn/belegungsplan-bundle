@@ -1,6 +1,6 @@
 # Contao Belegungsplan-Bundle Changelog
 
-### v5.1.0 (unveröffentlicht)
+### v5.1.0 Stable (10.09.2026)
 #### Contao-Kompatibilität
 - Unterstützung für **Contao 6.0** ergänzt
 - Unterstützung auf **Contao 5.3 LTS** erweitert (Support durch Contao bis 02/2028)

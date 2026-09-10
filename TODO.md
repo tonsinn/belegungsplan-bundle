@@ -29,7 +29,7 @@ Offen:
 - [ ] Lokale Git-Zugangsdaten: die Remote-URL in `.git/config` enthält Anmeldedaten im
       Klartext. Auf SSH oder einen Credential-Helper umstellen und die alten Daten
       zurückziehen. (Betrifft nur die lokale Arbeitskopie, nicht das Repository.)
-- [ ] README.md: Changelog-Auszug bei Release von v5.1.0 aktualisieren
+- [x] README.md: Changelog-Auszug auf v5.1.0 aktualisiert
 
 ## Fachliche Punkte
 - 'Belegungsplan Liste' muss Monatsname und Jahr hinter Titel anzeigen

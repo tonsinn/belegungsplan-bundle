@@ -25,6 +25,15 @@ Eine ausführliche Dokumentation zu den Komponenten finden sie auf der [**Projek
 
 ## Der neueste Changelog
 
+### v5.1.0 (10.09.2026)
+
+#### Contao-Kompatibilität:
+- Unterstützung für **Contao 6.0** ergänzt
+- Unterstützung auf **Contao 5.3 LTS** erweitert
+- PHP-Anforderung von 8.4 auf 8.2 gesenkt, damit Contao-5.3-Installationen auf
+  PHP 8.2/8.3 das Bundle nutzen können
+- Am Bundle-Code selbst waren dafür keine Änderungen nötig
+
 ### v5.0.0 (05.03.2026)
 
 #### Wichtig: Da es sich um ein großes Update handelt, erstellen Sie bitte eine Sicherungskopie ihrer Datenbank und ihrer Contao-Installation. Es müssen eventuell Einstellungen geändert werden.
