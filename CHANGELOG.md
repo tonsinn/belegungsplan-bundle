@@ -1,5 +1,11 @@
 # Contao Belegungsplan-Bundle Changelog
 
+### v5.1.2 (unveröffentlicht)
+#### Aufräumen
+- `public/style.css` entfernt. Die Datei wurde seit dem v5.0.0-Aufräumen nirgends mehr
+  eingebunden und war zudem überflüssig: die einzigen noch verwendeten Klassen `w25`
+  und `w33` liefert Contao selbst mit.
+
 ### v5.1.1 Stable (10.09.2026)
 #### Logo
 - Neue, für 360×360 optimierte `belegungsplan.svg`. Wirkt über `extra.logo` auf die

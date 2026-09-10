@@ -32,9 +32,9 @@ Offen:
 - [x] README.md: Changelog-Auszug auf v5.1.0 aktualisiert
 
 ## Sonstiges
-- [ ] `public/style.css` ist toter Code: Die Datei wird nirgends registriert (kein `TL_CSS`,
-      kein Hook) — die zugehörige `config.php` fiel beim v5.0.0-Aufräumen weg. Enthält u.a.
-      die Backend-Icon-Regel `#tl_navigation .group-beleg`. Entfernen oder wieder einbinden.
+- [x] `public/style.css` entfernt. War toter Code (nirgends registriert, seit dem
+      v5.0.0-Aufräumen ohne `config.php`) und zudem redundant: die einzigen noch in den
+      DCA genutzten Klassen `w25`/`w33` bringt Contao-Core selbst mit (in 5.3 wie 6.0).
 
 ## Fachliche Punkte — waren Release-Gate für v5.1.1
 Beide mit v5.1.1 (10.09.2026) erledigt. Der zugehörige Metadaten-PR ist eröffnet und
