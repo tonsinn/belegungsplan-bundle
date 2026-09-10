@@ -4,7 +4,7 @@
 [![](https://img.shields.io/packagist/dt/tonsinn/belegungsplan-bundle.svg?style=flat-square)](https://packagist.org/packages/tonsinn/belegungsplan-bundle)
 [![License](https://poser.pugx.org/tonsinn/belegungsplan-bundle/license)](//packagist.org/packages/tonsinn/belegungsplan-bundle)
 
-Contao 5 Bundle zur Erstellung von Belegungsplänen. Basierend auf der Arbeit von Jan Karai (mailwurm/belegungsplan-bundle).
+Contao-Bundle zur Erstellung von Belegungsplänen, für Contao 5 und 6. Basierend auf der Arbeit von Jan Karai (mailwurm/belegungsplan-bundle).
 
 
 ## Systemvoraussetzungen

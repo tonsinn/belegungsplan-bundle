@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Bundle Does
 
-`tonsinn/belegungsplan-bundle` is a Contao 5 bundle for creating occupancy/booking schedules ("Belegungspläne"). It renders a calendar grid showing bookings across multiple objects (e.g., rental rooms) grouped by categories, with configurable colors and display modes.
+`tonsinn/belegungsplan-bundle` is a Contao bundle (5.3 to 6.0) for creating occupancy/booking schedules ("Belegungspläne"). It renders a calendar grid showing bookings across multiple objects (e.g., rental rooms) grouped by categories, with configurable colors and display modes.
 
 ## Supported Contao versions
 
