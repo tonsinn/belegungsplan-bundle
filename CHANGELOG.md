@@ -1,6 +1,9 @@
 # Contao Belegungsplan-Bundle Changelog
 
 ### v5.1.1 (unveröffentlicht)
+#### Logo
+- Neue, für 360×360 optimierte `belegungsplan.svg`. Wirkt über `extra.logo` auf die
+  Darstellung im Contao Manager und auf Packagist.
 #### Belegungsplan-Liste
 - Monatsname und Jahr werden jetzt zusätzlich hinter dem Kategorie-Titel angezeigt
   (nur bei aktivierter Option „Hauptkategorien anzeigen"). Die Angabe steht in einem

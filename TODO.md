@@ -31,13 +31,19 @@ Offen:
       zurückziehen. (Betrifft nur die lokale Arbeitskopie, nicht das Repository.)
 - [x] README.md: Changelog-Auszug auf v5.1.0 aktualisiert
 
+## Sonstiges
+- [ ] `public/style.css` ist toter Code: Die Datei wird nirgends registriert (kein `TL_CSS`,
+      kein Hook) — die zugehörige `config.php` fiel beim v5.0.0-Aufräumen weg. Enthält u.a.
+      die Backend-Icon-Regel `#tl_navigation .group-beleg`. Entfernen oder wieder einbinden.
+
 ## Fachliche Punkte — Release-Gate für v5.1.1
 **Beide Punkte müssen vor der Veröffentlichung von v5.1.1 erledigt sein.**
 - [x] 'Belegungsplan Liste' zeigt Monatsname und Jahr hinter dem Kategorie-Titel
       (`mod_belegungsplan_table.html.twig`, `<span class="blp-category-month">`).
       Sichtbar nur, wenn „Hauptkategorien anzeigen" aktiv ist — die Kategoriezeile
       wird sonst gar nicht gerendert. Browser-Sichtprüfung steht noch aus.
-- Belegungsplan.svg ist für 360x360 optimiert statt jetziger Grafik
-  Metadaten-Repo meta/tonsinn/belegungsplan-bundle/logo.svg: identisch mit dem Original und
-  bereits gemergt. Für das neue Logo bräuchte es einen eigenen, kleinen PR an
-  contao/package-metadata.
+- [x] `public/belegungsplan.svg` durch die neue, für 360×360 optimierte Grafik ersetzt.
+      Wirkt über `extra.logo` in der composer.json auf Contao Manager und Packagist.
+- [ ] **Offen:** PR an `contao/package-metadata` für
+      `meta/tonsinn/belegungsplan-bundle/logo.svg` (dort liegt noch die alte Grafik).
+      Die fertige Datei ist identisch mit `public/belegungsplan.svg`.
