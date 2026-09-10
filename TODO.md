@@ -36,8 +36,9 @@ Offen:
       kein Hook) — die zugehörige `config.php` fiel beim v5.0.0-Aufräumen weg. Enthält u.a.
       die Backend-Icon-Regel `#tl_navigation .group-beleg`. Entfernen oder wieder einbinden.
 
-## Fachliche Punkte — Release-Gate für v5.1.1
-**Beide Punkte müssen vor der Veröffentlichung von v5.1.1 erledigt sein.**
+## Fachliche Punkte — waren Release-Gate für v5.1.1
+Bundle-seitig beide mit v5.1.1 (10.09.2026) erledigt. Offen bleibt nur der PR an
+das externe Metadaten-Repo (siehe unten).
 - [x] 'Belegungsplan Liste' zeigt Monatsname und Jahr hinter dem Kategorie-Titel
       (`mod_belegungsplan_table.html.twig`, `<span class="blp-category-month">`).
       Sichtbar nur, wenn „Hauptkategorien anzeigen" aktiv ist — die Kategoriezeile

@@ -1,6 +1,6 @@
 # Contao Belegungsplan-Bundle Changelog
 
-### v5.1.1 (unveröffentlicht)
+### v5.1.1 Stable (10.09.2026)
 #### Logo
 - Neue, für 360×360 optimierte `belegungsplan.svg`. Wirkt über `extra.logo` auf die
   Darstellung im Contao Manager und auf Packagist.

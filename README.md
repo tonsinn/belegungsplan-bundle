@@ -25,6 +25,15 @@ Eine ausführliche Dokumentation zu den Komponenten finden sie auf der [**Projek
 
 ## Der neueste Changelog
 
+### v5.1.1 (10.09.2026)
+
+#### Logo:
+- Neue, für 360×360 optimierte Grafik (Contao Manager, Packagist)
+
+#### Belegungsplan-Liste:
+- Monatsname und Jahr werden zusätzlich hinter dem Kategorie-Titel angezeigt
+  (bei aktivierter Option „Hauptkategorien anzeigen")
+
 ### v5.1.0 (10.09.2026)
 
 #### Contao-Kompatibilität:
