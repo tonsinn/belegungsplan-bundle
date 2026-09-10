@@ -49,6 +49,12 @@ $GLOBALS['TL_DCA']['tl_belegungsplan_objekte'] = array(
 			'headerFields'            => array('title'),
 			'child_record_callback'   => [\Tonsinn\BelegungsplanBundle\EventListener\DataContainer\BelegungsplanObjekteListener::class, 'listQuestions']
 		),
+		// Contao 6 builds record labels (e.g. for the "new record" breadcrumb) from
+		// list.label.fields even in mode 4 - without it vsprintf() throws.
+		'label' => array(
+			'fields'                  => array('name'),
+			'format'                  => '%s'
+		),
 		'global_operations' => array(
 			'all' => array(
 				'label'               => &$GLOBALS['TL_LANG']['MSC']['all'],

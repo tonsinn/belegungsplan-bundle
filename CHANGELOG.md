@@ -1,6 +1,10 @@
 # Contao Belegungsplan-Bundle Changelog
 
 ### v5.1.2 (unveröffentlicht)
+#### Fehlerbehebung
+- Contao 6: Anlegen eines Objekts brach mit „The arguments array must contain 1 items,
+  0 given" ab. `tl_belegungsplan_objekte` hatte keine `list.label`-Konfiguration, die
+  Contao 6 für die Datensatzbezeichnung auch im Modus 4 auswertet.
 #### Aufräumen
 - `public/style.css` entfernt. Die Datei wurde seit dem v5.0.0-Aufräumen nirgends mehr
   eingebunden und war zudem überflüssig: die einzigen noch verwendeten Klassen `w25`
