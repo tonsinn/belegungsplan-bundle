@@ -1,4 +1,6 @@
-# TODO — Offene Punkte (belegungsplan-bundle)
+# TODO (belegungsplan-bundle)
+
+Stand 29.09.2026: keine offenen Punkte.
 
 ## Contao 6 / 5.3-Update
 
@@ -14,17 +16,17 @@ Erledigt (CLI-/Container-Ebene, gegen 5.3.51 / 5.7.13 / 6.0.0 verifiziert):
       Dabei gefunden und mit v5.1.2 behoben: Anlegen eines Objekts in Contao 6 scheiterte
       am fehlenden `list.label` in `tl_belegungsplan_objekte`.
 
-Offen:
+Entscheidungen und Aufräumarbeiten:
 - [x] PHP-Constraint bleibt `^8.2` (seit v5.1.0 veröffentlicht), damit 5.3-LTS-Instanzen
       auf PHP 8.2/8.3 das Bundle nutzen können.
 - [x] Wegwerf-Testinstallationen `~/www/compat-test-53` und `~/www/compat-test-60` auf dem
       Server gelöscht.
-- [ ] Demo-Instanz belegungsplan.tonsinn.de läuft aktuell über das Composer-Path-Repo auf
-      `dev-main` (Symlink auf `bundles/belegungsplan-bundle`). Nach dem v5.1.0-Release
-      entscheiden, ob sie auf die Packagist-Version zurückgestellt wird
-      (`bin/remote-uninstall.sh` + `composer require tonsinn/belegungsplan-bundle:^5.1`).
-- [ ] Optional: `.github/workflows/ci.yml` mit Matrix `php: [8.2, 8.3, 8.4]` ×
-      `contao: [5.3.*, 5.7.*, 6.0.*]` (`composer validate` + `composer install`)
+- [x] Demo-Instanz belegungsplan.tonsinn.de bleibt bewusst auf dem Composer-Path-Repo
+      (`dev-main`, Symlink auf `bundles/belegungsplan-bundle`) — so greift `bin/sync-belegungsplan.sh`
+      direkt. Umstellen auf die Packagist-Version ginge mit `bin/remote-uninstall.sh` +
+      `composer require tonsinn/belegungsplan-bundle:^5.1`.
+- [x] CI-Matrix bewusst nicht umgesetzt; geprüft wird weiterhin manuell über die
+      Remote-Testinstallation.
 - [x] Lokale Git-Remote auf SSH umgestellt, keine Anmeldedaten mehr in `.git/config`.
 - [x] README.md: Changelog-Auszug auf v5.1.0 aktualisiert
 
